@@ -7,6 +7,8 @@ import { AppController } from './app.controller';
 import { CrawlerModule } from './domains/crawler/crawler.module';
 import { UsersModule } from './domains/user/users.module';
 import { AuthModule } from './auth/auth.module';
+import { APP_GUARD } from '@nestjs/core';
+import { GqlAuthGuard } from 'auth/guards/gql.guard';
 
 @Module({
   imports: [
@@ -34,6 +36,11 @@ import { AuthModule } from './auth/auth.module';
     AuthModule,
   ],
   controllers: [AppController],
-  providers: [],
+  providers: [
+    // {
+    //   provide: APP_GUARD,
+    //   useClass: GqlAuthGuard,
+    // },
+  ],
 })
 export class AppModule {}

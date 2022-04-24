@@ -4,8 +4,10 @@ import { PassportModule } from '@nestjs/passport';
 import { UsersModule } from 'domains/user/users.module';
 import { config } from 'dotenv';
 import { AuthResolver } from './auth.resolver';
+
 import { AuthService } from './auth.service';
 import { JwtStrategy } from './strategies/jwt.strategy';
+import { LocalStrategy } from './strategies/local.strategy';
 
 config();
 
@@ -18,6 +20,6 @@ config();
       signOptions: { expiresIn: '7d' },
     }),
   ],
-  providers: [AuthService, AuthResolver, JwtStrategy],
+  providers: [AuthService, JwtStrategy, AuthResolver, LocalStrategy],
 })
 export class AuthModule {}

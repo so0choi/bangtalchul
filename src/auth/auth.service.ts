@@ -2,8 +2,8 @@ import { Injectable, NotFoundException } from '@nestjs/common';
 import { LoginDto } from 'domains/user/dtos/login.dto';
 import { UsersService } from 'domains/user/users.service';
 import * as bcrypt from 'bcrypt';
-import { User } from 'entities/user.entity';
 import { JwtService } from '@nestjs/jwt';
+import { User } from 'entities/user.entity';
 
 @Injectable()
 export class AuthService {
@@ -12,11 +12,11 @@ export class AuthService {
     private jwtService: JwtService,
   ) {}
 
-  async validateUser({ email, password }: LoginDto): Promise<true> {
+  async validateUser({ email, password }: LoginDto): Promise<User> {
     const user = await this.usersService.findOneOrThrowByEmail(email);
 
     await this.compareHashOrThrow(password, user.password);
-    return true;
+    return user;
   }
 
   async compareHashOrThrow(plain: string, hashed: string): Promise<void> {
@@ -26,8 +26,8 @@ export class AuthService {
   }
 
   async login({ email, password }: LoginDto) {
-    await this.validateUser({ email, password });
-    const payload = { email, password };
+    const validUser = await this.validateUser({ email, password });
+    const payload = { id: validUser.id, email };
     return this.jwtService.sign(payload);
   }
 }

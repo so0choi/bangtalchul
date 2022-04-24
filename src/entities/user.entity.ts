@@ -23,6 +23,10 @@ export class User {
   @Field()
   name: string;
 
+  @Column()
+  @Field()
+  provider: string;
+
   @BeforeInsert()
   async encryptPassword(): Promise<void> {
     try {
