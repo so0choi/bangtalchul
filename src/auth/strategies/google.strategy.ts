@@ -24,11 +24,12 @@ export class GoogleStrategy extends PassportStrategy(Strategy) {
     const { name, emails } = profile;
     console.log(profile);
 
-    const user = {
+    const oauthUser = {
       email: emails[0].value,
       name: `${name.givenName} ${name.familyName}`,
       accessToken,
+      provider: 'google',
     };
-    done(null, user);
+    return oauthUser;
   }
 }

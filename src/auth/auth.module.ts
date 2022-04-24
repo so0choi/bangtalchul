@@ -3,11 +3,11 @@ import { JwtModule } from '@nestjs/jwt';
 import { PassportModule } from '@nestjs/passport';
 import { UsersModule } from 'domains/user/users.module';
 import { config } from 'dotenv';
+import { AuthController } from './auth.controller';
 import { AuthResolver } from './auth.resolver';
 
 import { AuthService } from './auth.service';
 import { JwtStrategy } from './strategies/jwt.strategy';
-import { LocalStrategy } from './strategies/local.strategy';
 
 config();
 
@@ -20,6 +20,7 @@ config();
       signOptions: { expiresIn: '7d' },
     }),
   ],
-  providers: [AuthService, JwtStrategy, AuthResolver, LocalStrategy],
+  controllers: [AuthController],
+  providers: [AuthService, JwtStrategy, AuthResolver],
 })
 export class AuthModule {}

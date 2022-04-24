@@ -37,10 +37,10 @@ import { GqlAuthGuard } from 'auth/guards/gql.guard';
   ],
   controllers: [AppController],
   providers: [
-    // {
-    //   provide: APP_GUARD,
-    //   useClass: GqlAuthGuard,
-    // },
+    {
+      provide: APP_GUARD,
+      useClass: GqlAuthGuard,
+    },
   ],
 })
 export class AppModule {}

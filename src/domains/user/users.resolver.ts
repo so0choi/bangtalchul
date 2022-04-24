@@ -6,8 +6,9 @@ import { GqlAuthGuard } from 'auth/guards/gql.guard';
 import { CurrentUser } from 'decorators/getCurrentUser';
 import { Public } from 'decorators/setMetadata';
 
-import { User } from 'entities/user.entity';
+import { User } from 'domains/user/entities/user.entity';
 import { CreateDto } from './dtos/create.dto';
+import { UpdateDto } from './dtos/update.dto';
 import { UsersService } from './users.service';
 
 @Resolver(() => User)
@@ -25,7 +26,17 @@ export class UsersResolver {
   @Query(() => User, {
     name: 'profile',
   })
-  async getOne(@CurrentUser() user: User) {
-    return this.userService.findOneOrThrowByEmail(user.email);
+  async getProfile(@CurrentUser() user: User) {
+    return this.userService.findOneByEmail(user.email);
+  }
+
+  @Mutation(() => User, {
+    name: 'editProfile',
+  })
+  async editProfile(
+    @CurrentUser() user: User,
+    @Args('data') updateDto: UpdateDto,
+  ) {
+    return this.userService.edit(user, updateDto);
   }
 }

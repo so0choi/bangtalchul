@@ -1,8 +1,18 @@
-import { Field, Int, ObjectType } from '@nestjs/graphql';
-import { BeforeInsert, Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
+import { Field, InputType, Int, ObjectType } from '@nestjs/graphql';
+import {
+  BeforeInsert,
+  BeforeUpdate,
+  Column,
+  CreateDateColumn,
+  Entity,
+  OneToMany,
+  PrimaryGeneratedColumn,
+  UpdateDateColumn,
+} from 'typeorm';
 
 import * as bcrypt from 'bcrypt';
 import { InternalServerErrorException } from '@nestjs/common';
+import { Comment } from 'domains/review/entities/comment.entity';
 
 @ObjectType()
 @Entity()
@@ -24,8 +34,18 @@ export class User {
   name: string;
 
   @Column()
-  @Field()
+  @Field({ defaultValue: 'local' })
   provider: string;
+
+  @OneToMany(() => Comment, (comment) => comment.writer)
+  @Field(() => [Comment], { nullable: true })
+  comments: Comment[];
+
+  @UpdateDateColumn()
+  updatedAt: Date;
+
+  @CreateDateColumn()
+  createdAt: Date;
 
   @BeforeInsert()
   async encryptPassword(): Promise<void> {

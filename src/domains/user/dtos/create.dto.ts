@@ -10,4 +10,6 @@ export class CreateDto {
 
   @Field()
   name: string;
+
+  provider: string;
 }

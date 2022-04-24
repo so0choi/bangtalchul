@@ -1,6 +1,10 @@
-import { Injectable, NotFoundException } from '@nestjs/common';
+import {
+  ConflictException,
+  Injectable,
+  NotFoundException,
+} from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
-import { User } from 'entities/user.entity';
+import { User } from 'domains/user/entities/user.entity';
 import { Repository } from 'typeorm';
 import { CreateDto } from './dtos/create.dto';
 import * as bcrypt from 'bcrypt';
@@ -14,34 +18,39 @@ export class UsersService {
     private usersRepository: Repository<User>,
   ) {}
 
-  async create(createDto: CreateDto): Promise<User | Error> {
-    const { email } = createDto;
-    try {
-      const isDuplicate = await this.usersRepository.findOne({ email });
+  async create(createDto: CreateDto): Promise<User> {
+    const { email, provider } = createDto;
 
-      if (isDuplicate) {
-        return new Error(`User '${email}' already exists`);
-      }
-      return await this.usersRepository.save(
-        this.usersRepository.create(createDto),
-      );
-    } catch (err) {
-      console.error(err);
-      throw err;
+    const isDuplicate = await this.usersRepository.findOne({ email });
+    if (isDuplicate) {
+      throw new ConflictException(`User '${email}' already exists`);
     }
+
+    return await this.usersRepository.save(
+      this.usersRepository.create({
+        ...createDto,
+        provider: provider ? provider : 'local',
+      }),
+    );
   }
 
-  async findOneById(id: number): Promise<User> {
+  findOneById(id: number): Promise<User> {
     return this.usersRepository.findOne(id);
   }
 
-  async findOneOrThrowByEmail(email: string): Promise<User> {
-    const user = await this.usersRepository.findOne({ email });
-    if (!user) {
-      throw new NotFoundException(`User with ${email} doesn't exist`);
-    }
-    return user;
+  findOneByEmail(email: string): Promise<User> {
+    return this.usersRepository.findOne({ email });
   }
 
-  // async update({ name, password }: UpdateDto): Promise<User | Error> {}
+  async edit({ id }: User, updateData: UpdateDto): Promise<User> {
+    if (updateData.password) {
+      updateData.password = await bcrypt.hash(updateData.password, 10);
+    }
+    const currentUser = await this.findOneById(id);
+
+    return await this.usersRepository.save({
+      ...currentUser,
+      ...updateData,
+    });
+  }
 }

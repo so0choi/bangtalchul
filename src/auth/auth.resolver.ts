@@ -5,15 +5,14 @@ import { Public } from 'decorators/setMetadata';
 import { LoginDto } from 'domains/user/dtos/login.dto';
 
 import { AuthService } from './auth.service';
-import { LocalAuthGuard } from './guards/local.guard';
 
 @Resolver()
 export class AuthResolver {
   constructor(private authService: AuthService) {}
 
-  @UseGuards(LocalAuthGuard)
+  @Public()
   @Query(() => String)
   async login(@Args('input') input: LoginDto) {
-    return this.authService.login(input);
+    return this.authService.localLogin(input);
   }
 }
