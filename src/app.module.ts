@@ -9,6 +9,7 @@ import { UsersModule } from './domains/user/users.module';
 import { AuthModule } from './auth/auth.module';
 import { APP_GUARD } from '@nestjs/core';
 import { GqlAuthGuard } from 'auth/guards/gql.guard';
+import { ConfigModule } from "@nestjs/config";
 
 @Module({
   imports: [
@@ -18,7 +19,10 @@ import { GqlAuthGuard } from 'auth/guards/gql.guard';
           autoLoadEntities: true,
         }),
     }),
+    ConfigModule.forRoot({
+      envFilePath: '.dev.env',
 
+    }),
     CrawlerModule,
     GraphQLModule.forRoot<ApolloDriverConfig>({
       driver: ApolloDriver,
