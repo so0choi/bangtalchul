@@ -1,5 +1,5 @@
 import { Controller, Get, Res } from '@nestjs/common';
-import { Public } from 'decorators/setMetadata';
+import { Public } from '@common/decorators/setMetadata';
 import { Response } from 'express';
 
 @Controller()

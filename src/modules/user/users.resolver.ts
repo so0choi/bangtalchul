@@ -2,14 +2,11 @@ import { UseGuards } from '@nestjs/common';
 import { Args, Mutation, Query, Resolver } from '@nestjs/graphql';
 import { AuthGuard } from '@nestjs/passport';
 import { Context } from 'apollo-server-core';
-import { GqlAuthGuard } from 'auth/guards/gql.guard';
-import { CurrentUser } from 'decorators/getCurrentUser';
-import { Public } from 'decorators/setMetadata';
-
-import { User } from 'domains/user/entities/user.entity';
-import { CreateDto } from './dtos/create.dto';
-import { UpdateDto } from './dtos/update.dto';
+import { GqlAuthGuard } from '@common/auth/guards/gql.guard';
+import { CurrentUser } from '@common/decorators/getCurrentUser';
+import { Public } from '@common/decorators/setMetadata';
 import { UsersService } from './users.service';
+import { Prisma, Prisma, User } from '@prisma/client';
 
 @Resolver(() => User)
 export class UsersResolver {
@@ -19,7 +16,7 @@ export class UsersResolver {
   @Mutation(() => User, {
     name: 'signup',
   })
-  async create(@Args('user') createDto: CreateDto) {
+  async create(@Args('user') createDto: User) {
     return this.userService.create(createDto);
   }
 
@@ -35,7 +32,7 @@ export class UsersResolver {
   })
   async editProfile(
     @CurrentUser() user: User,
-    @Args('data') updateDto: UpdateDto,
+    @Args('data') updateDto: Prisma.UserUpdateInput,
   ) {
     return this.userService.edit(user, updateDto);
   }

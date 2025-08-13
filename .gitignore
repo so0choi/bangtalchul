@@ -39,3 +39,4 @@ src/configs/constants
 .env
 
 .yarn/
+/src/generated/prisma

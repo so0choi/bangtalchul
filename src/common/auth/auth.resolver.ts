@@ -1,8 +1,8 @@
 import { UseGuards } from '@nestjs/common';
 import { Args, Resolver, Query } from '@nestjs/graphql';
 import { AuthGuard } from '@nestjs/passport';
-import { Public } from 'decorators/setMetadata';
-import { LoginDto } from 'domains/user/dtos/login.dto';
+import { Public } from '@common/decorators/setMetadata';
+import { LoginDto } from '../../modules/user/dtos/login.dto';
 
 import { AuthService } from './auth.service';
 

@@ -1,0 +1,38 @@
+{"level":"info","message":"AppController {/}:"}
+{"level":"info","message":"Mapped {/, GET} route"}
+{"level":"info","message":"AuthController {/}:"}
+{"level":"info","message":"Mapped {/google, GET} route"}
+{"level":"info","message":"Mapped {/google/callback, GET} route"}
+{"level":"info","message":"Mapped {/graphql, POST} route"}
+{"level":"info","message":"Nest application successfully started"}
+{"level":"error","message":"Error: getaddrinfo ENOTFOUND listening - undefined"}
+{"level":"info","message":"AppController {/}:"}
+{"level":"info","message":"Mapped {/, GET} route"}
+{"level":"info","message":"AuthController {/}:"}
+{"level":"info","message":"Mapped {/google, GET} route"}
+{"level":"info","message":"Mapped {/google/callback, GET} route"}
+{"level":"info","message":"Mapped {/graphql, POST} route"}
+{"level":"info","message":"Nest application successfully started"}
+{"level":"error","message":"Error: getaddrinfo ENOTFOUND listening - undefined"}
+{"level":"info","message":"AppController {/}:"}
+{"level":"info","message":"Mapped {/, GET} route"}
+{"level":"info","message":"AuthController {/}:"}
+{"level":"info","message":"Mapped {/google, GET} route"}
+{"level":"info","message":"Mapped {/google/callback, GET} route"}
+{"level":"info","message":"Mapped {/graphql, POST} route"}
+{"level":"info","message":"Nest application successfully started"}
+{"level":"info","message":"AppController {/}:"}
+{"level":"info","message":"Mapped {/, GET} route"}
+{"level":"info","message":"AuthController {/}:"}
+{"level":"info","message":"Mapped {/google, GET} route"}
+{"level":"info","message":"Mapped {/google/callback, GET} route"}
+{"level":"info","message":"Mapped {/graphql, POST} route"}
+{"level":"info","message":"Nest application successfully started"}
+[90m2025-08-06 01:42:51[39m ℹ️ [36m[1mINFO[22m[39m: AppController {/}:
+[90m2025-08-06 01:42:51[39m ℹ️ [36m[1mINFO[22m[39m: Mapped {/, GET} route
+[90m2025-08-06 01:42:51[39m ℹ️ [36m[1mINFO[22m[39m: AuthController {/}:
+[90m2025-08-06 01:42:51[39m ℹ️ [36m[1mINFO[22m[39m: Mapped {/google, GET} route
+[90m2025-08-06 01:42:51[39m ℹ️ [36m[1mINFO[22m[39m: Mapped {/google/callback, GET} route
+[90m2025-08-06 01:42:51[39m ℹ️ [36m[1mINFO[22m[39m: Mapped {/graphql, POST} route
+[90m2025-08-06 01:42:51[39m ℹ️ [36m[1mINFO[22m[39m: Nest application successfully started
+[90m2025-08-06 01:42:57[39m ❌ [31m[1mERROR[22m[39m: TypeError: res.status(...).json is not a function

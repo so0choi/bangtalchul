@@ -12,7 +12,7 @@ import {
 
 import * as bcrypt from 'bcrypt';
 import { InternalServerErrorException } from '@nestjs/common';
-import { Comment } from 'domains/review/entities/comment.entity';
+import { Comment } from '../../review/entities/comment.entity';
 
 @ObjectType()
 @Entity()

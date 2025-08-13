@@ -1,20 +1,22 @@
 import { Injectable, NotFoundException } from '@nestjs/common';
-import { LoginDto } from 'domains/user/dtos/login.dto';
-import { UsersService } from 'domains/user/users.service';
+import { LoginDto } from '../../modules/user/dtos/login.dto';
+
 import * as bcrypt from 'bcrypt';
 import { JwtService } from '@nestjs/jwt';
-import { User } from 'domains/user/entities/user.entity';
+
 import { CreateJwtTokenDto } from './dtos/createJwtToken.dto';
+import { PrismaService } from '../../database/prisma.service';
+import { User } from '@prisma/client';
 
 @Injectable()
 export class AuthService {
   constructor(
-    private usersService: UsersService,
+    private prismaService: PrismaService,
     private jwtService: JwtService,
   ) {}
 
   async validateUser({ email, password }: LoginDto): Promise<User> {
-    const user = await this.usersService.findOneByEmail(email);
+    const user = await this.prismaService.user.findUnique({ where: { email } });
 
     await this.compareHashOrThrow(password, user.password);
     return user;
@@ -33,13 +35,17 @@ export class AuthService {
   }
 
   async oauthLogin(inputUser: User) {
-    let user = await this.usersService.findOneByEmail(inputUser.email);
+    let user = await this.prismaService.user.findUnique({
+      where: { email: inputUser.email },
+    });
     if (!user) {
-      user = await this.usersService.create({
-        email: user.email,
-        provider: user.provider,
-        password: `${user.email}:${Date.now()}`,
-        name: user.name,
+      user = await this.prismaService.user.create({
+        data: {
+          email: user.email,
+          provider: user.provider,
+          password: `${user.email}:${Date.now()}`,
+          name: user.name,
+        },
       });
     }
     return this.getJwtToken({ email: user.email, id: user.id });

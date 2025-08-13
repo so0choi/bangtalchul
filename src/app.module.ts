@@ -1,29 +1,23 @@
 import { ApolloDriver, ApolloDriverConfig } from '@nestjs/apollo';
 import { Module } from '@nestjs/common';
 import { GraphQLModule } from '@nestjs/graphql';
-import { TypeOrmModule } from '@nestjs/typeorm';
-import { getConnectionOptions } from 'typeorm';
 import { AppController } from './app.controller';
-import { CrawlerModule } from './domains/crawler/crawler.module';
-import { UsersModule } from './domains/user/users.module';
-import { AuthModule } from './auth/auth.module';
-import { APP_GUARD } from '@nestjs/core';
-import { GqlAuthGuard } from 'auth/guards/gql.guard';
-import { ConfigModule } from "@nestjs/config";
+import { UsersModule } from './modules/user/users.module';
+import { AuthModule } from '@common/auth/auth.module';
+import { APP_GUARD, APP_INTERCEPTOR } from '@nestjs/core';
+import { GqlAuthGuard } from '@common/auth/guards/gql.guard';
+import { ConfigModule } from '@nestjs/config';
+import { RequestLoggingInterceptor } from '@common/interceptors/request-logging.interceptor';
+import { PrismaModule } from './database/prisma.module';
+import { WinstonService } from '@common/logger/winston.service';
+import { WinstonModule } from '@common/logger/winston.module';
 
 @Module({
   imports: [
-    TypeOrmModule.forRootAsync({
-      useFactory: async () =>
-        Object.assign(await getConnectionOptions(), {
-          autoLoadEntities: true,
-        }),
-    }),
+    PrismaModule,
     ConfigModule.forRoot({
       envFilePath: '.dev.env',
-
     }),
-    CrawlerModule,
     GraphQLModule.forRoot<ApolloDriverConfig>({
       driver: ApolloDriver,
       autoSchemaFile: true,
@@ -38,12 +32,17 @@ import { ConfigModule } from "@nestjs/config";
     }),
     UsersModule,
     AuthModule,
+    WinstonModule,
   ],
   controllers: [AppController],
   providers: [
     {
       provide: APP_GUARD,
       useClass: GqlAuthGuard,
+    },
+    {
+      provide: APP_INTERCEPTOR,
+      useClass: RequestLoggingInterceptor,
     },
   ],
 })

@@ -1,7 +1,7 @@
 import { Module } from '@nestjs/common';
 import { JwtModule } from '@nestjs/jwt';
 import { PassportModule } from '@nestjs/passport';
-import { UsersModule } from 'domains/user/users.module';
+import { UsersModule } from '../../modules/user/users.module';
 import { config } from 'dotenv';
 import { AuthController } from './auth.controller';
 import { AuthResolver } from './auth.resolver';
