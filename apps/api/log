@@ -1,0 +1,130 @@
+{"level":"info","message":"AppController {/}:"}
+{"level":"info","message":"Mapped {/, GET} route"}
+{"level":"info","message":"AuthController {/}:"}
+{"level":"info","message":"Mapped {/google, GET} route"}
+{"level":"info","message":"Mapped {/google/callback, GET} route"}
+{"level":"info","message":"Mapped {/graphql, POST} route"}
+{"level":"info","message":"Nest application successfully started"}
+{"level":"error","message":"Error: getaddrinfo ENOTFOUND listening - undefined"}
+{"level":"info","message":"AppController {/}:"}
+{"level":"info","message":"Mapped {/, GET} route"}
+{"level":"info","message":"AuthController {/}:"}
+{"level":"info","message":"Mapped {/google, GET} route"}
+{"level":"info","message":"Mapped {/google/callback, GET} route"}
+{"level":"info","message":"Mapped {/graphql, POST} route"}
+{"level":"info","message":"Nest application successfully started"}
+{"level":"error","message":"Error: getaddrinfo ENOTFOUND listening - undefined"}
+{"level":"info","message":"AppController {/}:"}
+{"level":"info","message":"Mapped {/, GET} route"}
+{"level":"info","message":"AuthController {/}:"}
+{"level":"info","message":"Mapped {/google, GET} route"}
+{"level":"info","message":"Mapped {/google/callback, GET} route"}
+{"level":"info","message":"Mapped {/graphql, POST} route"}
+{"level":"info","message":"Nest application successfully started"}
+{"level":"info","message":"AppController {/}:"}
+{"level":"info","message":"Mapped {/, GET} route"}
+{"level":"info","message":"AuthController {/}:"}
+{"level":"info","message":"Mapped {/google, GET} route"}
+{"level":"info","message":"Mapped {/google/callback, GET} route"}
+{"level":"info","message":"Mapped {/graphql, POST} route"}
+{"level":"info","message":"Nest application successfully started"}
+[90m2025-08-06 01:42:51[39m ℹ️ [36m[1mINFO[22m[39m: AppController {/}:
+[90m2025-08-06 01:42:51[39m ℹ️ [36m[1mINFO[22m[39m: Mapped {/, GET} route
+[90m2025-08-06 01:42:51[39m ℹ️ [36m[1mINFO[22m[39m: AuthController {/}:
+[90m2025-08-06 01:42:51[39m ℹ️ [36m[1mINFO[22m[39m: Mapped {/google, GET} route
+[90m2025-08-06 01:42:51[39m ℹ️ [36m[1mINFO[22m[39m: Mapped {/google/callback, GET} route
+[90m2025-08-06 01:42:51[39m ℹ️ [36m[1mINFO[22m[39m: Mapped {/graphql, POST} route
+[90m2025-08-06 01:42:51[39m ℹ️ [36m[1mINFO[22m[39m: Nest application successfully started
+[90m2025-08-06 01:42:57[39m ❌ [31m[1mERROR[22m[39m: TypeError: res.status(...).json is not a function
+[90m2025-10-26 18:28:09[39m ℹ️ [36m[1mINFO[22m[39m: AppController {/}:
+[90m2025-10-26 18:28:09[39m ℹ️ [36m[1mINFO[22m[39m: Mapped {/, GET} route
+[90m2025-10-26 18:28:09[39m ℹ️ [36m[1mINFO[22m[39m: AuthController {/}:
+[90m2025-10-26 18:28:09[39m ℹ️ [36m[1mINFO[22m[39m: Mapped {/google, GET} route
+[90m2025-10-26 18:28:09[39m ℹ️ [36m[1mINFO[22m[39m: Mapped {/google/callback, GET} route
+[90m2025-10-26 18:28:09[39m ℹ️ [36m[1mINFO[22m[39m: Mapped {/graphql, POST} route
+[90m2025-10-26 18:28:09[39m ℹ️ [36m[1mINFO[22m[39m: Nest application successfully started
+[90m2025-10-26 18:37:09[39m ❌ [31m[1mERROR[22m[39m: TypeError: Cannot destructure property 'method' of 'req' as it is undefined.
+[90m2025-10-26 18:41:24[39m ℹ️ [36m[1mINFO[22m[39m: AppController {/}:
+[90m2025-10-26 18:41:24[39m ℹ️ [36m[1mINFO[22m[39m: Mapped {/, GET} route
+[90m2025-10-26 18:41:24[39m ℹ️ [36m[1mINFO[22m[39m: AuthController {/}:
+[90m2025-10-26 18:41:24[39m ℹ️ [36m[1mINFO[22m[39m: Mapped {/google, GET} route
+[90m2025-10-26 18:41:24[39m ℹ️ [36m[1mINFO[22m[39m: Mapped {/google/callback, GET} route
+[90m2025-10-26 18:41:24[39m ℹ️ [36m[1mINFO[22m[39m: Mapped {/graphql, POST} route
+[90m2025-10-26 18:41:24[39m ℹ️ [36m[1mINFO[22m[39m: Nest application successfully started
+[90m2025-10-26 18:41:27[39m ❌ [31m[1mERROR[22m[39m: TypeError: Cannot destructure property 'method' of 'req' as it is undefined.
+[90m2025-10-26 18:43:36[39m ℹ️ [36m[1mINFO[22m[39m: AppController {/}:
+[90m2025-10-26 18:43:36[39m ℹ️ [36m[1mINFO[22m[39m: Mapped {/, GET} route
+[90m2025-10-26 18:43:36[39m ℹ️ [36m[1mINFO[22m[39m: AuthController {/}:
+[90m2025-10-26 18:43:36[39m ℹ️ [36m[1mINFO[22m[39m: Mapped {/google, GET} route
+[90m2025-10-26 18:43:36[39m ℹ️ [36m[1mINFO[22m[39m: Mapped {/google/callback, GET} route
+[90m2025-10-26 18:43:36[39m ℹ️ [36m[1mINFO[22m[39m: Mapped {/graphql, POST} route
+[90m2025-10-26 18:43:36[39m ℹ️ [36m[1mINFO[22m[39m: Nest application successfully started
+[90m2025-10-26 18:44:51[39m ℹ️ [36m[1mINFO[22m[39m: AppController {/}:
+[90m2025-10-26 18:44:51[39m ℹ️ [36m[1mINFO[22m[39m: Mapped {/, GET} route
+[90m2025-10-26 18:44:51[39m ℹ️ [36m[1mINFO[22m[39m: AuthController {/}:
+[90m2025-10-26 18:44:51[39m ℹ️ [36m[1mINFO[22m[39m: Mapped {/google, GET} route
+[90m2025-10-26 18:44:51[39m ℹ️ [36m[1mINFO[22m[39m: Mapped {/google/callback, GET} route
+[90m2025-10-26 18:44:51[39m ℹ️ [36m[1mINFO[22m[39m: Mapped {/graphql, POST} route
+[90m2025-10-26 18:44:51[39m ℹ️ [36m[1mINFO[22m[39m: Nest application successfully started
+[90m2025-10-26 18:44:55[39m ❌ [31m[1mERROR[22m[39m: TypeError: Cannot destructure property 'method' of 'http.getRequest(...)' as it is undefined.
+[90m2025-10-26 18:46:06[39m ℹ️ [36m[1mINFO[22m[39m: AppController {/}:
+[90m2025-10-26 18:46:06[39m ℹ️ [36m[1mINFO[22m[39m: Mapped {/, GET} route
+[90m2025-10-26 18:46:06[39m ℹ️ [36m[1mINFO[22m[39m: AuthController {/}:
+[90m2025-10-26 18:46:06[39m ℹ️ [36m[1mINFO[22m[39m: Mapped {/google, GET} route
+[90m2025-10-26 18:46:06[39m ℹ️ [36m[1mINFO[22m[39m: Mapped {/google/callback, GET} route
+[90m2025-10-26 18:46:06[39m ℹ️ [36m[1mINFO[22m[39m: Mapped {/graphql, POST} route
+[90m2025-10-26 18:46:06[39m ℹ️ [36m[1mINFO[22m[39m: Nest application successfully started
+[90m2025-10-26 18:46:15[39m ❌ [31m[1mERROR[22m[39m: PrismaClientKnownRequestError: 
+Invalid `this.prismaService.user.findUniqueOrThrow()` invocation in
+/Users/sychoi/Desktop/Project/bangtalchul/src/modules/user/users.service.ts:18:37
+
+  15 const { email, provider } = createDto;
+  16 
+  17 try {
+→ 18   await this.prismaService.user.findUniqueOrThrow(
+An operation failed because it depends on one or more records that were required but not found. No record was found for a query.
+[90m2025-10-26 18:49:10[39m ℹ️ [36m[1mINFO[22m[39m: AppController {/}:
+[90m2025-10-26 18:49:10[39m ℹ️ [36m[1mINFO[22m[39m: Mapped {/, GET} route
+[90m2025-10-26 18:49:10[39m ℹ️ [36m[1mINFO[22m[39m: AuthController {/}:
+[90m2025-10-26 18:49:10[39m ℹ️ [36m[1mINFO[22m[39m: Mapped {/google, GET} route
+[90m2025-10-26 18:49:10[39m ℹ️ [36m[1mINFO[22m[39m: Mapped {/google/callback, GET} route
+[90m2025-10-26 18:49:10[39m ℹ️ [36m[1mINFO[22m[39m: Mapped {/graphql, POST} route
+[90m2025-10-26 18:49:10[39m ℹ️ [36m[1mINFO[22m[39m: Nest application successfully started
+[90m2025-10-26 18:54:19[39m ℹ️ [36m[1mINFO[22m[39m: AppController {/}:
+[90m2025-10-26 18:54:19[39m ℹ️ [36m[1mINFO[22m[39m: Mapped {/, GET} route
+[90m2025-10-26 18:54:19[39m ℹ️ [36m[1mINFO[22m[39m: AuthController {/}:
+[90m2025-10-26 18:54:19[39m ℹ️ [36m[1mINFO[22m[39m: Mapped {/google, GET} route
+[90m2025-10-26 18:54:19[39m ℹ️ [36m[1mINFO[22m[39m: Mapped {/google/callback, GET} route
+[90m2025-10-26 18:54:19[39m ℹ️ [36m[1mINFO[22m[39m: Mapped {/graphql, POST} route
+[90m2025-10-26 18:54:19[39m ℹ️ [36m[1mINFO[22m[39m: Nest application successfully started
+[90m2025-10-26 19:02:17[39m ℹ️ [36m[1mINFO[22m[39m: AppController {/}:
+[90m2025-10-26 19:02:17[39m ℹ️ [36m[1mINFO[22m[39m: Mapped {/, GET} route
+[90m2025-10-26 19:02:17[39m ℹ️ [36m[1mINFO[22m[39m: AuthController {/}:
+[90m2025-10-26 19:02:17[39m ℹ️ [36m[1mINFO[22m[39m: Mapped {/google, GET} route
+[90m2025-10-26 19:02:17[39m ℹ️ [36m[1mINFO[22m[39m: Mapped {/google/callback, GET} route
+[90m2025-10-26 19:02:17[39m ℹ️ [36m[1mINFO[22m[39m: Mapped {/graphql, POST} route
+[90m2025-10-26 19:02:17[39m ℹ️ [36m[1mINFO[22m[39m: Nest application successfully started
+[90m2025-10-26 19:02:43[39m ℹ️ [36m[1mINFO[22m[39m: POST /graphql - undefined (3665ms)
+[90m2025-10-26 19:06:13[39m ℹ️ [36m[1mINFO[22m[39m: POST /graphql - undefined (279ms)
+[90m2025-10-26 19:14:37[39m ℹ️ [36m[1mINFO[22m[39m: AppController {/}:
+[90m2025-10-26 19:14:37[39m ℹ️ [36m[1mINFO[22m[39m: Mapped {/, GET} route
+[90m2025-10-26 19:14:37[39m ℹ️ [36m[1mINFO[22m[39m: AuthController {/}:
+[90m2025-10-26 19:14:37[39m ℹ️ [36m[1mINFO[22m[39m: Mapped {/google, GET} route
+[90m2025-10-26 19:14:37[39m ℹ️ [36m[1mINFO[22m[39m: Mapped {/google/callback, GET} route
+[90m2025-10-26 19:14:37[39m ℹ️ [36m[1mINFO[22m[39m: Mapped {/graphql, POST} route
+[90m2025-10-26 19:14:37[39m ℹ️ [36m[1mINFO[22m[39m: Nest application successfully started
+[90m2025-10-26 19:33:33[39m ℹ️ [36m[1mINFO[22m[39m: AppController {/}:
+[90m2025-10-26 19:33:33[39m ℹ️ [36m[1mINFO[22m[39m: Mapped {/, GET} route
+[90m2025-10-26 19:33:33[39m ℹ️ [36m[1mINFO[22m[39m: AuthController {/}:
+[90m2025-10-26 19:33:33[39m ℹ️ [36m[1mINFO[22m[39m: Mapped {/google, GET} route
+[90m2025-10-26 19:33:33[39m ℹ️ [36m[1mINFO[22m[39m: Mapped {/google/callback, GET} route
+[90m2025-10-26 19:33:33[39m ℹ️ [36m[1mINFO[22m[39m: Mapped {/graphql, POST} route
+[90m2025-10-26 19:33:33[39m ℹ️ [36m[1mINFO[22m[39m: Nest application successfully started
+[90m2025-10-26 19:34:05[39m ℹ️ [36m[1mINFO[22m[39m: AppController {/}:
+[90m2025-10-26 19:34:05[39m ℹ️ [36m[1mINFO[22m[39m: Mapped {/, GET} route
+[90m2025-10-26 19:34:05[39m ℹ️ [36m[1mINFO[22m[39m: AuthController {/}:
+[90m2025-10-26 19:34:05[39m ℹ️ [36m[1mINFO[22m[39m: Mapped {/google, GET} route
+[90m2025-10-26 19:34:05[39m ℹ️ [36m[1mINFO[22m[39m: Mapped {/google/callback, GET} route
+[90m2025-10-26 19:34:05[39m ℹ️ [36m[1mINFO[22m[39m: Mapped {/graphql, POST} route
+[90m2025-10-26 19:34:05[39m ℹ️ [36m[1mINFO[22m[39m: Nest application successfully started
+[90m2025-10-26 19:51:40[39m ℹ️ [36m[1mINFO[22m[39m: POST /graphql - undefined (3532ms)
