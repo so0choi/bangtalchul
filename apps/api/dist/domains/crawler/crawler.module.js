@@ -9,13 +9,14 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.CrawlerModule = void 0;
 const common_1 = require("@nestjs/common");
 const crawler_service_1 = require("./crawler.service");
-const crawler_controller_1 = require("./crawler.controller");
+const crawler_resolver_1 = require("./crawler.resolver");
+const place_module_1 = require("../place/place.module");
 let CrawlerModule = class CrawlerModule {
 };
 CrawlerModule = __decorate([
     (0, common_1.Module)({
-        providers: [crawler_service_1.CrawlerService],
-        controllers: [crawler_controller_1.CrawlerController],
+        imports: [place_module_1.PlaceModule],
+        providers: [crawler_service_1.CrawlerService, crawler_resolver_1.CrawlerResolver],
     })
 ], CrawlerModule);
 exports.CrawlerModule = CrawlerModule;

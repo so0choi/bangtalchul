@@ -1,16 +1,12 @@
-import {
-  BadRequestException,
-  Injectable,
-  NotFoundException,
-} from '@nestjs/common';
-import { LoginInput } from '../../modules/user/dtos/login.dto';
+import { Injectable, NotFoundException } from '@nestjs/common';
+import { LoginDto } from '../../modules/user/dtos/login.dto';
 
 import * as bcrypt from 'bcrypt';
 import { JwtService } from '@nestjs/jwt';
 
 import { CreateJwtTokenDto } from './dtos/createJwtToken.dto';
-import { PrismaService } from '../../database/prisma.service';
-import { User } from '@prisma/client';
+import { PrismaService } from '@db/prisma.service';
+import { UserModel } from '@prisma/models/User';
 
 @Injectable()
 export class AuthService {
@@ -19,8 +15,10 @@ export class AuthService {
     private jwtService: JwtService,
   ) {}
 
-  async validateUser({ email, password }: LoginInput): Promise<User> {
-    const user = await this.prismaService.user.findUnique({ where: { email } });
+  async validateUser({ email, password }: LoginDto): Promise<UserModel> {
+    const user = await this.prismaService.user.findUniqueOrThrow({
+      where: { email },
+    });
 
     await this.compareHashOrThrow(password, user.password);
     return user;
@@ -32,30 +30,26 @@ export class AuthService {
     }
   }
 
-  async localLogin({ email, password }: LoginInput) {
+  async localLogin({ email, password }: LoginDto) {
     const validUser = await this.validateUser({ email, password });
     const payload = { id: validUser.id, email };
     return this.getJwtToken(payload);
   }
 
-  async oauthLogin(inputUser: User) {
+  async oauthLogin(inputUser: UserModel) {
     let user = await this.prismaService.user.findUnique({
       where: { email: inputUser.email },
     });
-    if (user) {
-      throw new BadRequestException('User already exists');
-      // TODO: 로직 재확인
+    if (!user) {
+      user = await this.prismaService.user.create({
+        data: {
+          email: user.email,
+          provider: user.provider,
+          password: `${user.email}:${Date.now()}`,
+          name: user.name,
+        },
+      });
     }
-
-    user = await this.prismaService.user.create({
-      data: {
-        email: user.email,
-        provider: user.provider,
-        password: `${user.email}:${Date.now()}`,
-        name: user.name,
-      },
-    });
-
     return this.getJwtToken({ email: user.email, id: user.id });
   }
 

@@ -2,37 +2,44 @@ import { Args, Mutation, Query, Resolver } from '@nestjs/graphql';
 import { CurrentUser } from '@common/decorators/getCurrentUser';
 import { Public } from '@common/decorators/setMetadata';
 import { UsersService } from './users.service';
-import { Prisma, User as PrismaUser } from '@prisma/client';
-import { User as UserModel } from './entities/user.entity';
-import { CreateUserInput } from './dtos/create.dto';
-import { UpdateUserInput } from './dtos/update.dto';
-import { LoginInput } from './dtos/login.dto';
+import { UserModel } from '@prisma/models';
+import { User } from './models/user.model';
+import { CreateUserInput, CreateUserOutput } from './dtos/create.dto';
+import { UpdateDto } from './dtos/update.dto';
+import { log } from 'node:console';
 
-@Resolver((of) => UserModel)
+@Resolver(() => User)
 export class UsersResolver {
   constructor(private userService: UsersService) {}
 
   @Public()
-  @Mutation(() => UserModel, {
+  @Mutation(() => CreateUserOutput, {
     name: 'signup',
   })
-  async create(@Args('user') createDto: CreateUserInput) {
-    return this.userService.create(createDto);
+  async createUser(
+    @Args('createUserInput') input: CreateUserInput,
+  ): Promise<CreateUserOutput> {
+    try {
+      const user = await this.userService.create(input);
+      return { ok: true, user };
+    } catch (e) {
+      return { ok: false, message: e.message };
+    }
   }
 
-  @Query(() => UserModel, {
+  @Query(() => User, {
     name: 'profile',
   })
-  async getProfile(@CurrentUser() user: PrismaUser) {
+  async getProfile(@CurrentUser() user: UserModel) {
     return this.userService.findOneByEmail(user.email);
   }
 
-  @Mutation(() => UserModel, {
+  @Mutation(() => User, {
     name: 'editProfile',
   })
   async editProfile(
-    @CurrentUser() user: PrismaUser,
-    @Args('data') updateDto: UpdateUserInput,
+    @CurrentUser() user: UserModel,
+    @Args('data') updateDto: UpdateDto,
   ) {
     return this.userService.edit(user, updateDto);
   }

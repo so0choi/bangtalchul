@@ -5,12 +5,9 @@ import ConsentCheckboxGroup from "@/components/signup/ConsentCheckboxGroup";
 import SocialSignupButtons from "@/components/signup/SocialSignupButtons";
 import Form from "next/form";
 import {signUp} from "@/components/signup/actions/signup";
+import { PREFERENCE_TAGS } from "@/constants/preferences";
 
-interface SignupFormProps {
-  preferenceTags: string[];
-}
-
-const SignupForm = ({ preferenceTags }: SignupFormProps) => {
+const SignupForm = () => {
 
 
   return (
@@ -60,7 +57,7 @@ const SignupForm = ({ preferenceTags }: SignupFormProps) => {
             placeholder="••••••••"
           />
         </div>
-        <PreferenceTagPicker tags={preferenceTags} />
+        <PreferenceTagPicker tags={PREFERENCE_TAGS} />
         <ConsentCheckboxGroup />
         <button
           type="submit"

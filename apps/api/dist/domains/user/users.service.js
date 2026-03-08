@@ -36,6 +36,11 @@ let UsersService = class UsersService {
     findOneByEmail(email) {
         return this.usersRepository.findOne({ email });
     }
+    async getProfile(user) {
+        return await this.usersRepository.findOne({ id: user.id }, {
+            relations: ['reviews', 'comments', 'reviews.place'],
+        });
+    }
     async edit({ id }, updateData) {
         if (updateData.password) {
             updateData.password = await bcrypt.hash(updateData.password, 10);

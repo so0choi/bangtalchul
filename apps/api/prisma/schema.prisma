@@ -5,18 +5,13 @@
 // Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
 
 generator client {
-  provider = "prisma-client-js"
+  provider = "prisma-client"
+  output = "../generated/prisma"
+  moduleFormat = "cjs"
 }
 
 datasource db {
   provider = "postgresql"
-  url      = env("DATABASE_URL")
-}
-
-enum Provider {
-  local
-  google
-  github
 }
 
 model User {
@@ -24,7 +19,18 @@ model User {
   email     String   @unique
   name      String
   password  String
-  provider  Provider @default(local)
+  provider  String   @default("local")
   createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
+  updatedAt DateTime @updatedAt @default(now())
+  reviews Review[]
+}
+
+model Review {
+  id Int @id @default(autoincrement())
+  title String
+  content String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt @default(now())
+  author User @relation(fields: [authorId], references: [id])
+  authorId Int
 }

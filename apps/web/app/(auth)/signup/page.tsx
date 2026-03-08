@@ -6,16 +6,6 @@ export const metadata = {
   description: "방탈출 리뷰와 큐레이션을 즐기기 위한 계정을 생성하세요.",
 };
 
-const preferenceTags = [
-  "추리 중심",
-  "몰입형 스토리",
-  "강한 공포",
-  "SF/테크",
-  "협동 퍼즐",
-  "감성 서사",
-];
-
-
 export default function SignupPage() {
   return (
     <main className="mx-auto flex max-w-5xl flex-col gap-12 px-4 pb-16 pt-12 sm:px-6 lg:flex-row lg:px-8 lg:pt-16">
@@ -34,7 +24,7 @@ export default function SignupPage() {
           "협력 팀 매칭 베타 참여권",
         ]}
       />
-      <SignupForm preferenceTags={preferenceTags} />
+      <SignupForm />
     </main>
   );
 }

@@ -1,5 +1,5 @@
 interface PreferenceTagPickerProps {
-  tags: string[];
+  tags: readonly string[];
 }
 
 const PreferenceTagPicker = ({ tags }: PreferenceTagPickerProps) => {

@@ -14,7 +14,7 @@ var __param = (this && this.__param) || function (paramIndex, decorator) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.AppController = void 0;
 const common_1 = require("@nestjs/common");
-const setMetadata_1 = require("./common/decorators/setMetadata");
+const setMetadata_1 = require("./decorators/setMetadata");
 let AppController = class AppController {
     healthCheck(res) {
         return res.status(200).json({
@@ -23,7 +23,6 @@ let AppController = class AppController {
         });
     }
 };
-exports.AppController = AppController;
 __decorate([
     (0, setMetadata_1.Public)(),
     (0, common_1.Get)(),
@@ -32,7 +31,8 @@ __decorate([
     __metadata("design:paramtypes", [Object]),
     __metadata("design:returntype", void 0)
 ], AppController.prototype, "healthCheck", null);
-exports.AppController = AppController = __decorate([
+AppController = __decorate([
     (0, common_1.Controller)()
 ], AppController);
+exports.AppController = AppController;
 //# sourceMappingURL=app.controller.js.map

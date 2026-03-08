@@ -10,33 +10,44 @@ exports.AppModule = void 0;
 const apollo_1 = require("@nestjs/apollo");
 const common_1 = require("@nestjs/common");
 const graphql_1 = require("@nestjs/graphql");
+const typeorm_1 = require("@nestjs/typeorm");
+const typeorm_2 = require("typeorm");
 const app_controller_1 = require("./app.controller");
-const users_module_1 = require("./modules/user/users.module");
-const auth_module_1 = require("./common/auth/auth.module");
+const crawler_module_1 = require("./domains/crawler/crawler.module");
+const users_module_1 = require("./domains/user/users.module");
+const auth_module_1 = require("./auth/auth.module");
 const core_1 = require("@nestjs/core");
-const gql_guard_1 = require("./common/auth/guards/gql.guard");
-const config_1 = require("@nestjs/config");
-const request_logging_interceptor_1 = require("./common/interceptors/request-logging.interceptor");
-const prisma_module_1 = require("./database/prisma.module");
-const winston_module_1 = require("./common/logger/winston.module");
+const gql_guard_1 = require("./auth/guards/gql.guard");
+const review_module_1 = require("./domains/review/review.module");
+const place_module_1 = require("./domains/place/place.module");
 let AppModule = class AppModule {
 };
-exports.AppModule = AppModule;
-exports.AppModule = AppModule = __decorate([
+AppModule = __decorate([
     (0, common_1.Module)({
         imports: [
-            prisma_module_1.PrismaModule,
-            config_1.ConfigModule.forRoot({
-                envFilePath: '.dev.env',
+            typeorm_1.TypeOrmModule.forRootAsync({
+                useFactory: async () => Object.assign(await (0, typeorm_2.getConnectionOptions)(), {
+                    autoLoadEntities: true,
+                }),
             }),
+            crawler_module_1.CrawlerModule,
             graphql_1.GraphQLModule.forRoot({
                 driver: apollo_1.ApolloDriver,
                 autoSchemaFile: true,
-                graphiql: true,
+                context: ({ req, connection }) => {
+                    if (req) {
+                        const user = req.headers.authorization;
+                        return Object.assign(Object.assign({}, req), { user });
+                    }
+                    else {
+                        return connection;
+                    }
+                },
             }),
             users_module_1.UsersModule,
             auth_module_1.AuthModule,
-            winston_module_1.WinstonModule,
+            review_module_1.ReviewModule,
+            place_module_1.PlaceModule,
         ],
         controllers: [app_controller_1.AppController],
         providers: [
@@ -44,11 +55,8 @@ exports.AppModule = AppModule = __decorate([
                 provide: core_1.APP_GUARD,
                 useClass: gql_guard_1.GqlAuthGuard,
             },
-            {
-                provide: core_1.APP_INTERCEPTOR,
-                useClass: request_logging_interceptor_1.RequestLoggingInterceptor,
-            },
         ],
     })
 ], AppModule);
+exports.AppModule = AppModule;
 //# sourceMappingURL=app.module.js.map

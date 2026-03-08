@@ -15,6 +15,7 @@ const typeorm_1 = require("typeorm");
 const bcrypt = require("bcrypt");
 const common_1 = require("@nestjs/common");
 const comment_entity_1 = require("../../review/entities/comment.entity");
+const review_entity_1 = require("../../review/entities/review.entity");
 let User = class User {
     async encryptPassword() {
         try {
@@ -57,6 +58,11 @@ __decorate([
     __metadata("design:type", Array)
 ], User.prototype, "comments", void 0);
 __decorate([
+    (0, typeorm_1.OneToMany)(() => review_entity_1.Review, (review) => review.writer),
+    (0, graphql_1.Field)(() => [review_entity_1.Review], { nullable: true }),
+    __metadata("design:type", Array)
+], User.prototype, "reviews", void 0);
+__decorate([
     (0, typeorm_1.UpdateDateColumn)(),
     __metadata("design:type", Date)
 ], User.prototype, "updatedAt", void 0);
@@ -72,6 +78,7 @@ __decorate([
 ], User.prototype, "encryptPassword", null);
 User = __decorate([
     (0, graphql_1.ObjectType)(),
+    (0, graphql_1.InputType)('UserInput'),
     (0, typeorm_1.Entity)()
 ], User);
 exports.User = User;

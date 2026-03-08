@@ -17,6 +17,6 @@ async function bootstrap() {
   );
   app.useLogger(app.get(WinstonService));
 
-  await app.listen(3000);
+  await app.listen(4000);
 }
 bootstrap();

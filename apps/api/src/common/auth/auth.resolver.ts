@@ -1,7 +1,7 @@
 import { Args, Mutation, Resolver } from '@nestjs/graphql';
 import { Public } from '@common/decorators/setMetadata';
-import { LoginInput } from '../../modules/user/dtos/login.dto';
-
+import { LoginDto } from '../../modules/user/dtos/login.dto';
+import { LoginOutput } from './dtos/login-output.dto';
 import { AuthService } from './auth.service';
 
 @Resolver()
@@ -9,10 +9,13 @@ export class AuthResolver {
   constructor(private authService: AuthService) {}
 
   @Public()
-  @Mutation(() => String, {
-    name: 'login',
-  })
-  async login(@Args('input') input: LoginInput) {
-    return this.authService.localLogin(input);
+  @Mutation(() => LoginOutput)
+  async login(@Args('input') input: LoginDto): Promise<LoginOutput> {
+    try {
+      const token = await this.authService.localLogin(input);
+      return { ok: true, token };
+    } catch (e) {
+      return { ok: false, message: e.message };
+    }
   }
 }

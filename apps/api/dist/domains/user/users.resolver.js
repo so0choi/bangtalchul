@@ -28,7 +28,7 @@ let UsersResolver = class UsersResolver {
         return this.userService.create(createDto);
     }
     async getProfile(user) {
-        return this.userService.findOneByEmail(user.email);
+        return this.userService.getProfile(user);
     }
     async editProfile(user, updateDto) {
         return this.userService.edit(user, updateDto);
@@ -50,7 +50,7 @@ __decorate([
     }),
     __param(0, (0, getCurrentUser_1.CurrentUser)()),
     __metadata("design:type", Function),
-    __metadata("design:paramtypes", [user_entity_1.User]),
+    __metadata("design:paramtypes", [Object]),
     __metadata("design:returntype", Promise)
 ], UsersResolver.prototype, "getProfile", null);
 __decorate([

@@ -11,11 +11,13 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.LocalAuthGuard = void 0;
 const common_1 = require("@nestjs/common");
+const core_1 = require("@nestjs/core");
 const graphql_1 = require("@nestjs/graphql");
 const passport_1 = require("@nestjs/passport");
 let LocalAuthGuard = class LocalAuthGuard extends (0, passport_1.AuthGuard)('local') {
-    constructor() {
+    constructor(reflector) {
         super();
+        this.reflector = reflector;
     }
     getRequest(context) {
         const ctx = graphql_1.GqlExecutionContext.create(context);
@@ -24,7 +26,7 @@ let LocalAuthGuard = class LocalAuthGuard extends (0, passport_1.AuthGuard)('loc
 };
 LocalAuthGuard = __decorate([
     (0, common_1.Injectable)(),
-    __metadata("design:paramtypes", [])
+    __metadata("design:paramtypes", [core_1.Reflector])
 ], LocalAuthGuard);
 exports.LocalAuthGuard = LocalAuthGuard;
 //# sourceMappingURL=local.guard.js.map

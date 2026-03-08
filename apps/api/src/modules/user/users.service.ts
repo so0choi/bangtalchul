@@ -1,11 +1,10 @@
 import { ConflictException, Injectable, Logger } from '@nestjs/common';
 import * as bcrypt from 'bcrypt';
-import { PrismaService } from '../../database/prisma.service';
-import { Prisma, User } from '@prisma/client';
+import { PrismaService } from '@db/prisma.service';
+import { UserModel } from '@prisma/models';
 import { CreateUserInput } from './dtos/create.dto';
-import { Provider } from './entities/user.entity';
-import { UpdateUserInput } from './dtos/update.dto';
-import { LoginInput } from './dtos/login.dto';
+import { UpdateDto } from './dtos/update.dto';
+import { log } from 'node:console';
 
 @Injectable()
 export class UsersService {
@@ -15,47 +14,41 @@ export class UsersService {
 
   constructor(private readonly prismaService: PrismaService) {}
 
-  async create(dto: CreateUserInput): Promise<User> {
-    const { email, provider, password } = dto;
+  async create(createDto: CreateUserInput): Promise<UserModel> {
+    const { email, provider } = createDto;
 
-    const hashedPassword = await bcrypt.hash(password, 10);
+    const exists = await this.prismaService.user.findUnique({
+      where: { email },
+    });
 
-    try {
-      return await this.prismaService.user.create({
-        data: {
-          email: dto.email,
-          password: hashedPassword,
-          name: dto.name,
-          provider: provider ?? Provider.local,
-        },
-      });
-    } catch (error) {
-      if (
-        error instanceof Prisma.PrismaClientKnownRequestError &&
-        error.code === 'P2002' &&
-        Array.isArray(error.meta?.target) &&
-        error.meta.target.includes('email')
-      ) {
-        throw new ConflictException(`User '${email}' already exists`);
-      }
-      throw error;
+    if (exists) {
+      throw new Error(`User '${email}' already exists`);
     }
+
+    const hashedPassword = await bcrypt.hash(createDto.password, 10);
+
+    return this.prismaService.user.create({
+      data: {
+        ...createDto,
+        password: hashedPassword,
+        provider: provider ?? 'local',
+      },
+    });
   }
 
-  findOneById(id: number): Promise<User> {
+  findOneById(id: number): Promise<UserModel> {
     return this.prismaService.user.findUnique({ where: { id } });
   }
 
-  findOneByEmail(email: string): Promise<User> {
+  findOneByEmail(email: string): Promise<UserModel> {
     return this.prismaService.user.findUnique({ where: { email } });
   }
 
-  async edit({ id }: User, updateData: UpdateUserInput): Promise<User> {
+  async edit({ id }: UserModel, updateData: UpdateDto): Promise<UserModel> {
     if (updateData.password) {
-      const salt = await bcrypt.genSalt(10);
       updateData.password = await bcrypt.hash(
-        updateData.password as string,
-        salt,
+        updateData.password.toString(),
+        10,
       );
     }
     const currentUser = await this.findOneById(id);
@@ -67,21 +60,5 @@ export class UsersService {
         ...updateData,
       },
     });
-  }
-
-  async login(dto: LoginInput) {
-    const { email, password } = dto;
-    const hashedPassword = await bcrypt.hash(password, 10);
-    const user = await this.prismaService.user.findFirst({
-      where: { email },
-    });
-    if (!user) {
-      throw new ConflictException(`User '${email}' not found`);
-    }
-
-    const savedUserHashedPassword = await bcrypt.hash(user.password, 10);
-    if (hashedPassword !== savedUserHashedPassword) {
-      throw new ConflictException(`Passwords don't match`);
-    }
   }
 }

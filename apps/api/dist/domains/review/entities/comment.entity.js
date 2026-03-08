@@ -38,6 +38,7 @@ __decorate([
 ], Comment.prototype, "review", void 0);
 Comment = __decorate([
     (0, graphql_1.ObjectType)(),
+    (0, graphql_1.InputType)('comment'),
     (0, typeorm_1.Entity)()
 ], Comment);
 exports.Comment = Comment;

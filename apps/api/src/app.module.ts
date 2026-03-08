@@ -9,8 +9,10 @@ import { GqlAuthGuard } from '@common/auth/guards/gql.guard';
 import { ConfigModule } from '@nestjs/config';
 import { RequestLoggingInterceptor } from '@common/interceptors/request-logging.interceptor';
 import { PrismaModule } from './database/prisma.module';
-import { WinstonModule } from '@common/logger/winston.module';
 import { ApolloServerPluginLandingPageLocalDefault } from '@apollo/server/plugin/landingPage/default';
+
+import { WinstonModule } from '@common/logger/winston.module';
+import { ReviewModule } from '@modules/review/review.module';
 
 @Module({
   imports: [
@@ -21,12 +23,21 @@ import { ApolloServerPluginLandingPageLocalDefault } from '@apollo/server/plugin
     GraphQLModule.forRoot<ApolloDriverConfig>({
       driver: ApolloDriver,
       autoSchemaFile: true,
-      graphiql: true,
-      // plugins: [ApolloServerPluginLandingPageLocalDefault()],
+      playground: false,
+      plugins: [ApolloServerPluginLandingPageLocalDefault()],
+      context: ({ req, connection }) => {
+        if (req) {
+          const user = req.headers.authorization;
+          return { ...req, user };
+        } else {
+          return connection;
+        }
+      },
     }),
     UsersModule,
     AuthModule,
     WinstonModule,
+    ReviewModule,
   ],
   controllers: [AppController],
   providers: [

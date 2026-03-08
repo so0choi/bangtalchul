@@ -5,8 +5,9 @@ import {
   Logger,
   NestInterceptor,
 } from '@nestjs/common';
-import { Observable, tap } from 'rxjs';
 import { GqlExecutionContext } from '@nestjs/graphql';
+import { log } from 'node:console';
+import { Observable, tap } from 'rxjs';
 
 @Injectable()
 export class RequestLoggingInterceptor implements NestInterceptor {
@@ -18,16 +19,16 @@ export class RequestLoggingInterceptor implements NestInterceptor {
     context: ExecutionContext,
     next: CallHandler<any>,
   ): Observable<any> | Promise<Observable<any>> {
-    const gqlContext = GqlExecutionContext.create(context);
-    const request = gqlContext.getContext().req;
+    const ctx = GqlExecutionContext.create(context);
 
-    const { method, originalUrl } = request;
+    const { req, reply } = ctx.getContext();
+    const { method, originalUrl } = req;
     const now = Date.now();
 
     return next.handle().pipe(
       tap(() => {
-        const res = context.switchToHttp().getResponse();
-        const { statusCode } = res;
+        if (!reply?.statusCode) return;
+        const { statusCode } = reply;
         this.logger.log(
           `${method} ${originalUrl} - ${statusCode} (${Date.now() - now}ms)`,
         );
