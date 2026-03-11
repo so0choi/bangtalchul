@@ -8,8 +8,6 @@ import {signUp} from "@/components/signup/actions/signup";
 import { PREFERENCE_TAGS } from "@/constants/preferences";
 
 const SignupForm = () => {
-
-
   return (
     <section className="flex-1 rounded-3xl border border-white/10 bg-slate-900/70 p-8 shadow-2xl shadow-black/30 backdrop-blur">
       <h2 className="text-2xl font-semibold text-white">회원가입</h2>
@@ -61,7 +59,7 @@ const SignupForm = () => {
         <ConsentCheckboxGroup />
         <button
           type="submit"
-          className="w-full rounded-2xl bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 px-4 py-3 text-base font-semibold text-white shadow-lg shadow-indigo-500/40 transition hover:-translate-y-0.5"
+          className="w-full rounded-2xl bg-linear-to-r from-indigo-500 via-purple-500 to-pink-500 px-4 py-3 text-base font-semibold text-white shadow-lg shadow-indigo-500/40 transition hover:-translate-y-0.5"
         >
           회원가입 완료
         </button>

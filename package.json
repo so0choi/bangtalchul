@@ -2,5 +2,12 @@
   "private": true,
   "workspaces": [
     "apps/*"
-  ]
+  ],
+  "scripts": {
+    "generate": "graphql-codegen"
+  },
+  "devDependencies": {
+    "@graphql-codegen/cli": "^6.1.3",
+    "@graphql-codegen/client-preset": "^4.5.1"
+  }
 }

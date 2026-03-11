@@ -15,6 +15,12 @@ export class CreateUserInput {
 
   @Field({ nullable: true })
   provider?: string;
+
+  @Field(() => [String], { nullable: true })
+  preferenceTags?: string[];
+
+  @Field({ nullable: true })
+  phone?: string;
 }
 
 @ObjectType()

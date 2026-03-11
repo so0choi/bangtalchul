@@ -8,13 +8,17 @@
     "start": "next start",
     "lint": "next lint"
   },
-  "dependencies": {
+  "dependencies": { 
+    "@apollo/client": "^4.1.6",
+    "@apollo/client-integration-nextjs": "^0.14.4",
     "@headlessui/react": "^1.6.1",
     "@heroicons/react": "^1.0.6",
     "@tailwindcss/postcss": "^4.1.18",
+    "graphql": "^16.13.1",
     "next": "latest",
     "react": "latest",
     "react-dom": "latest",
+    "rxjs": "^7.8.2",
     "zod": "^4.3.5"
   },
   "devDependencies": {
