@@ -756,3 +756,24 @@ Invalid `this.prismaService.user.findUnique()` invocation in
 [90m2026-03-07 01:00:51[39m ℹ️ [36m[1mINFO[22m[39m: Mapped {/google/callback, GET} route
 [90m2026-03-07 01:00:51[39m ℹ️ [36m[1mINFO[22m[39m: Mapped {/graphql, POST} route
 [90m2026-03-07 01:00:51[39m ℹ️ [36m[1mINFO[22m[39m: Nest application successfully started
+[90m2026-03-12 00:55:06[39m ℹ️ [36m[1mINFO[22m[39m: AppController {/}:
+[90m2026-03-12 00:55:06[39m ℹ️ [36m[1mINFO[22m[39m: Mapped {/, GET} route
+[90m2026-03-12 00:55:06[39m ℹ️ [36m[1mINFO[22m[39m: AuthController {/}:
+[90m2026-03-12 00:55:06[39m ℹ️ [36m[1mINFO[22m[39m: Mapped {/google, GET} route
+[90m2026-03-12 00:55:06[39m ℹ️ [36m[1mINFO[22m[39m: Mapped {/google/callback, GET} route
+[90m2026-03-12 00:55:07[39m ℹ️ [36m[1mINFO[22m[39m: Mapped {/graphql, POST} route
+[90m2026-03-12 00:55:07[39m ℹ️ [36m[1mINFO[22m[39m: Nest application successfully started
+[90m2026-03-12 00:55:19[39m ℹ️ [36m[1mINFO[22m[39m: AppController {/}:
+[90m2026-03-12 00:55:19[39m ℹ️ [36m[1mINFO[22m[39m: Mapped {/, GET} route
+[90m2026-03-12 00:55:19[39m ℹ️ [36m[1mINFO[22m[39m: AuthController {/}:
+[90m2026-03-12 00:55:19[39m ℹ️ [36m[1mINFO[22m[39m: Mapped {/google, GET} route
+[90m2026-03-12 00:55:19[39m ℹ️ [36m[1mINFO[22m[39m: Mapped {/google/callback, GET} route
+[90m2026-03-12 00:55:19[39m ℹ️ [36m[1mINFO[22m[39m: Mapped {/graphql, POST} route
+[90m2026-03-12 00:55:19[39m ℹ️ [36m[1mINFO[22m[39m: Nest application successfully started
+[90m2026-03-12 01:16:03[39m ℹ️ [36m[1mINFO[22m[39m: AppController {/}:
+[90m2026-03-12 01:16:03[39m ℹ️ [36m[1mINFO[22m[39m: Mapped {/, GET} route
+[90m2026-03-12 01:16:03[39m ℹ️ [36m[1mINFO[22m[39m: AuthController {/}:
+[90m2026-03-12 01:16:03[39m ℹ️ [36m[1mINFO[22m[39m: Mapped {/google, GET} route
+[90m2026-03-12 01:16:03[39m ℹ️ [36m[1mINFO[22m[39m: Mapped {/google/callback, GET} route
+[90m2026-03-12 01:16:03[39m ℹ️ [36m[1mINFO[22m[39m: Mapped {/graphql, POST} route
+[90m2026-03-12 01:16:03[39m ℹ️ [36m[1mINFO[22m[39m: Nest application successfully started
