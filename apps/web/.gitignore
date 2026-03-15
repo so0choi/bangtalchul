@@ -1,0 +1,6 @@
+# Next.js build
+/.next
+/out
+
+# Test
+/coverage
