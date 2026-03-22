@@ -1,13 +1,13 @@
-import HeroSection from "@/components/sections/HeroSection";
+import HeroSection from "@/src/components/sections/HeroSection";
 import RankingSection, {
   FeaturedRoom,
-} from "@/components/sections/RankingSection";
+} from "@/src/components/sections/RankingSection";
 import ReviewHighlightsSection, {
   ReviewHighlight,
-} from "@/components/sections/ReviewHighlightsSection";
+} from "@/src/components/sections/ReviewHighlightsSection";
 import CommunitySection, {
   CommunityPost,
-} from "@/components/sections/CommunitySection";
+} from "@/src/components/sections/CommunitySection";
 
 const heroStats = [
   { label: "일주일 리뷰", value: "1,240+" },

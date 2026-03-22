@@ -5,6 +5,8 @@ import { gql } from '@apollo/client';
 import { getClient } from '../../../app/ApolloClient';
 import { redirect } from 'next/navigation';
 import { cookies } from 'next/headers';
+import { log } from 'console';
+import { LOGIN_MUTATION } from '../../login/actions/login';
 
 const schema = z.object({
   email: z.email(),
@@ -27,16 +29,9 @@ const SIGN_UP_MUTATION = gql`
   }
 `;
 
-const LOGIN_MUTATION = gql`
-  mutation login($input: LoginDto!) {
-    login(input: $input) {
-      ok
-      token
-    }
-  }
-`;
-
 export async function signUp(formData: FormData) {
+  'use server';
+
   const rawFormData = {
     name: formData.get('name'),
     email: formData.get('email'),
@@ -57,7 +52,6 @@ export async function signUp(formData: FormData) {
     ...validatedFields.data,
     provider: 'local',
   };
-
   const {
     data: { ok, user },
   } = await getClient().mutate({
@@ -66,14 +60,19 @@ export async function signUp(formData: FormData) {
   });
 
   if (!ok) {
-    return { error: 'signup failed' };
+    throw new Error('Signup Failed');
   }
 
   const { data: loginData } = await getClient().mutate<{
     login: { ok: boolean; token: string };
   }>({
     mutation: LOGIN_MUTATION,
-    variables: { input: { email: validatedFields.data.email, password: validatedFields.data.password } },
+    variables: {
+      input: {
+        email: validatedFields.data.email,
+        password: validatedFields.data.password,
+      },
+    },
   });
 
   if (!loginData?.login?.ok) {

@@ -1,10 +1,10 @@
 import Link from "next/link";
-import TextField from "@/components/form/TextField";
-import PreferenceTagPicker from "@/components/signup/PreferenceTagPicker";
-import ConsentCheckboxGroup from "@/components/signup/ConsentCheckboxGroup";
-import SocialSignupButtons from "@/components/signup/SocialSignupButtons";
+import TextField from "@/src/components/form/TextField";
+import PreferenceTagPicker from "@/src/components/signup/PreferenceTagPicker";
+import ConsentCheckboxGroup from "@/src/components/signup/ConsentCheckboxGroup";
+import SocialSignupButtons from "@/src/components/signup/SocialSignupButtons";
 import Form from "next/form";
-import {signUp} from "@/components/signup/actions/signup";
+import {signUp} from "@/src/components/signup/actions/signup";
 import { PREFERENCE_TAGS } from "@/constants/preferences";
 
 const SignupForm = () => {
