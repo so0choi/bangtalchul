@@ -31,50 +31,54 @@ const CommunitySection = ({
 }: CommunitySectionProps) => {
   return (
     <section id="community" className="mt-20 grid gap-10 lg:grid-cols-[1.1fr,0.9fr]">
+      {/* Posts column */}
       <div>
         <div className="flex items-center justify-between">
           <div>
-            <p className="text-xs font-semibold uppercase tracking-[0.3em] text-emerald-600">
+            <p className="text-xs font-semibold uppercase tracking-[0.05rem] text-primary">
               {eyebrow}
             </p>
-            <h2 className="mt-2 text-3xl font-bold text-slate-900">{title}</h2>
+            <h2 className="font-display mt-2 text-3xl font-bold text-on-surface">{title}</h2>
           </div>
-          <button className="text-sm font-semibold text-emerald-600 underline-offset-4 hover:underline">
+          <button className="text-sm font-semibold text-primary underline-offset-4 hover:underline">
             {ctaLabel}
           </button>
         </div>
-        <div className="mt-8 space-y-4">
+        {/* Items separated by spacing, no dividers */}
+        <div className="mt-8 rounded-3xl bg-surface-container-low p-4 space-y-3">
           {posts.map((post) => (
             <article
               key={post.title}
-              className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm transition hover:border-emerald-300"
+              className="rounded-2xl bg-surface-container-lowest px-5 py-4 transition hover:shadow-ambient"
             >
-              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-emerald-600">
+              <p className="text-xs font-semibold uppercase tracking-[0.05rem] text-primary">
                 {post.category}
               </p>
-              <h3 className="mt-2 text-lg font-semibold text-slate-900">{post.title}</h3>
-              <p className="mt-1 text-sm text-slate-500">by {post.author}</p>
+              <h3 className="font-display mt-2 text-lg font-semibold text-on-surface">{post.title}</h3>
+              <p className="mt-1 text-sm text-on-surface-variant">by {post.author}</p>
             </article>
           ))}
         </div>
       </div>
-      <div className="rounded-3xl bg-linear-to-br from-emerald-500 via-teal-500 to-cyan-500 p-8 shadow-lg shadow-emerald-200/60">
-        <p className="text-xs font-semibold uppercase tracking-[0.3em] text-emerald-100">
+
+      {/* Spotlight — primary gradient CTA panel */}
+      <div className="rounded-3xl bg-linear-to-br from-primary to-primary-container p-8 shadow-ambient">
+        <p className="text-xs font-semibold uppercase tracking-[0.05rem] text-on-primary/70">
           {spotlight.eyebrow}
         </p>
-        <h3 className="mt-4 text-2xl font-bold text-white">{spotlight.title}</h3>
-        <p className="mt-3 text-sm text-emerald-50 leading-relaxed">{spotlight.description}</p>
-        <ul className="mt-6 space-y-3 text-sm text-white">
+        <h3 className="font-display mt-4 text-2xl font-bold text-on-primary">{spotlight.title}</h3>
+        <p className="mt-3 text-sm text-on-primary/80 leading-relaxed">{spotlight.description}</p>
+        <ul className="mt-6 space-y-3 text-sm text-on-primary">
           {spotlight.bullets.map((bullet) => (
             <li key={bullet} className="flex items-start gap-2">
-              <span className="mt-1 flex h-4 w-4 shrink-0 items-center justify-center rounded-full bg-white/30 text-white text-[10px] font-bold">✓</span>
+              <span className="mt-1 flex h-4 w-4 shrink-0 items-center justify-center rounded-full bg-on-primary/20 text-on-primary text-[10px] font-bold">✓</span>
               {bullet}
             </li>
           ))}
         </ul>
         <Link
           href={spotlight.cta.href}
-          className="mt-8 inline-flex w-full items-center justify-center rounded-2xl bg-white px-6 py-3 text-base font-semibold text-emerald-700 shadow-sm transition hover:shadow-md"
+          className="mt-8 inline-flex w-full items-center justify-center rounded-2xl bg-on-primary px-6 py-3 text-base font-semibold text-primary shadow-ambient transition hover:opacity-90"
         >
           {spotlight.cta.label}
         </Link>
