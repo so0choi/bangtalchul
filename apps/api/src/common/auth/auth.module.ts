@@ -6,7 +6,7 @@ import { config } from 'dotenv';
 import { AuthController } from './auth.controller';
 import { AuthResolver } from './auth.resolver';
 
-import { AuthService } from './auth.service';
+import { ACCESS_TOKEN_EXPIRES_IN, AuthService } from './auth.service';
 import { JwtStrategy } from './strategies/jwt.strategy';
 
 config();
@@ -17,7 +17,7 @@ config();
     PassportModule,
     JwtModule.register({
       secret: process.env.JWT_SECRET,
-      signOptions: { expiresIn: '7d' },
+      signOptions: { expiresIn: ACCESS_TOKEN_EXPIRES_IN },
     }),
   ],
   controllers: [AuthController],
