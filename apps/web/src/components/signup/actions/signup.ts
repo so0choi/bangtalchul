@@ -9,7 +9,7 @@ import {
   LOGIN_MUTATION,
   SIGN_UP_MUTATION,
 } from '../../../queries/auth.queries';
-import { TOKEN_COOKIE } from '@/src/lib/definitions';
+import { TOKEN_COOKIE } from '@/lib/definitions';
 
 const schema = z
   .object({

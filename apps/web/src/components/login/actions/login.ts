@@ -1,9 +1,9 @@
 'use server';
-import { getClient } from '@/src/app/ApolloClient';
+import { getClient } from '@/app/ApolloClient';
 import { redirect } from 'next/navigation';
 import { cookies } from 'next/headers';
-import { TOKEN_COOKIE } from '@/src/lib/definitions';
-import { LOGIN_MUTATION } from '@/src/queries/auth.queries';
+import { TOKEN_COOKIE } from '@/lib/definitions';
+import { LOGIN_MUTATION } from '@/queries/auth.queries';
 
 export async function login(_: any, formData: FormData) {
   const isAutologin = formData.get('autologin') === 'on';
@@ -45,5 +45,5 @@ export async function login(_: any, formData: FormData) {
     path: '/',
   });
 
-  redirect('/');
+  redirect('/dashboard');
 }

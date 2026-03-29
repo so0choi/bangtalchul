@@ -1,8 +1,25 @@
 import "./globals.css";
 import type { ReactNode } from "react";
-import Navigation from "@/src/components/layout/Navigation";
-import {cookies} from 'next/headers';
-import { TOKEN_COOKIE } from "@/src/lib/definitions";
+import { Inter, Nanum_Gothic, Geist } from "next/font/google";
+import Navigation from "@/components/layout/Navigation";
+import { cookies } from 'next/headers';
+import { TOKEN_COOKIE } from "@/lib/definitions";
+import { cn } from "@/lib/utils";
+
+const geist = Geist({subsets:['latin'],variable:'--font-sans'});
+
+const nanumGothic = Nanum_Gothic({
+  subsets: ["latin"],
+  variable: "--font-nanumgothic",
+  display: "swap",
+  weight: ["400", "700", "800"],
+});
+
+const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-inter",
+  display: "swap",
+});
 
 export const metadata = {
   title: "냉부 | 냉장고를 부탁해",
@@ -10,15 +27,15 @@ export const metadata = {
 };
 
 export default async function RootLayout({ children }: { children: ReactNode }) {
-  const cookiesStore = await cookies()
-  const token = cookiesStore.get(TOKEN_COOKIE)
+  const cookiesStore = await cookies();
+  const token = cookiesStore.get(TOKEN_COOKIE);
   const isLoggedIn = !!token;
 
   return (
-    <html lang="ko">
-      <body className="bg-stone-50 text-slate-900 antialiased">
+    <html lang="ko" className={cn(nanumGothic.variable, inter.variable, "font-sans", geist.variable)}>
+      <body className="bg-surface font-body text-on-surface antialiased">
         <div className="min-h-screen">
-          <Navigation isLoggedIn={isLoggedIn}/>
+          <Navigation isLoggedIn={isLoggedIn} />
           {children}
         </div>
       </body>

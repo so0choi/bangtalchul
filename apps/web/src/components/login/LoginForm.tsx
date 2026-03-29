@@ -4,7 +4,7 @@ import Form from 'next/form';
 import Link from 'next/link';
 import { login } from './actions/login';
 import { useActionState } from 'react';
-import Button from '@/src/components/ui/Button';
+import { Button } from '@/components/ui/button';
 
 const LoginForm = () => {
   const [state, action, pending] = useActionState(login, undefined);

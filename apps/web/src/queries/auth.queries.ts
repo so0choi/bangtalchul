@@ -1,7 +1,7 @@
 import { gql } from '@apollo/client';
 
 export const LOGIN_MUTATION = gql`
-  mutation login($input: LoginDto!) {
+  mutation Login($input: LoginDto!) {
     login(input: $input) {
       ok
       accessToken
@@ -20,6 +20,15 @@ export const SIGN_UP_MUTATION = gql`
       user {
         id
       }
+    }
+  }
+`;
+
+export const LOGOUT_MUTATION = gql`
+  mutation Logout {
+    logout {
+      ok
+      message
     }
   }
 `;

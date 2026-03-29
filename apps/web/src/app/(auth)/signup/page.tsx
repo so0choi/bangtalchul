@@ -1,5 +1,5 @@
-import SignupIntroCard from "@/src/components/signup/SignupIntroCard";
-import SignupForm from "@/src/components/signup/SignupForm";
+import SignupIntroCard from "@/components/signup/SignupIntroCard";
+import SignupForm from "@/components/signup/SignupForm";
 
 export const metadata = {
   title: "회원가입 | 냉부",

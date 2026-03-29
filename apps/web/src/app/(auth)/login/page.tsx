@@ -1,4 +1,4 @@
-import LoginForm from '@/src/components/login/LoginForm';
+import LoginForm from '@/components/login/LoginForm';
 
 export const metadata = {
   title: '로그인 | 냉부',

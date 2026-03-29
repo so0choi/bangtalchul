@@ -1,13 +1,13 @@
-import HeroSection from "@/src/components/sections/HeroSection";
+import HeroSection from "@/components/sections/HeroSection";
 import RankingSection, {
   FeaturedRecipe,
-} from "@/src/components/sections/RankingSection";
+} from "@/components/sections/RankingSection";
 import ReviewHighlightsSection, {
   ReviewHighlight,
-} from "@/src/components/sections/ReviewHighlightsSection";
+} from "@/components/sections/ReviewHighlightsSection";
 import CommunitySection, {
   CommunityPost,
-} from "@/src/components/sections/CommunitySection";
+} from "@/components/sections/CommunitySection";
 
 const heroStats = [
   { label: "관리 중인 식재료", value: "12만+" },
@@ -86,6 +86,8 @@ const communityPosts: CommunityPost[] = [
 ];
 
 export default function HomePage() {
+  
+
   return (
     <main className="mx-auto max-w-6xl px-4 pb-16 pt-10 sm:px-6 lg:px-8 lg:pt-16">
       <HeroSection

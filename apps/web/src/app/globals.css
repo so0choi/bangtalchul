@@ -1,18 +1,201 @@
 @import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
 
-html,
-body {
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+@custom-variant dark (&:is(.dark *));
+
+/* ─────────────────────────────────────────────────────────────
+   DESIGN.md Custom Tokens
+   shadcn의 @theme inline 이 --color-primary 등을 var(--primary)로
+   덮어쓰므로, :root 에서 shadcn 변수를 직접 우리 값으로 매핑한다.
+───────────────────────────────────────────────────────────── */
+@theme {
+  /* Primary — "Freshness" (#006e1c dark green) */
+  --color-on-primary:               #ffffff;
+  --color-primary-container:        #4caf50;
+  --color-on-primary-container:     #002204;
+
+  /* Secondary — "Organization" (blue, shadcn secondary와 별도 토큰) */
+  --color-org:                      #0061a4;
+  --color-secondary-fixed:          #d1e4ff;
+  --color-on-secondary-fixed:       #001d36;
+
+  /* Tertiary — "Expiration / Urgency" */
+  --color-tertiary:                 #b02f00;
+  --color-tertiary-container:       #ff6e43;
+  --color-on-tertiary:              #ffffff;
+
+  /* Surface hierarchy */
+  --color-surface:                  #f8faf9;
+  --color-surface-container-low:    #f2f4f3;
+  --color-surface-container:        #eceeee;
+  --color-surface-container-lowest: #ffffff;
+
+  /* On-surface */
+  --color-on-surface:               #191c1c;
+  --color-on-surface-variant:       #3f4948;
+  --color-outline:                  #6f7978;
+  --color-outline-variant:          #bec9c8;
 }
 
-/*a {*/
-/*  color: inherit;*/
-/*  text-decoration: none;*/
-/*}*/
+/* ─── :root — shadcn 변수를 우리 디자인 시스템 값으로 교체 ──── */
+:root {
+  /* Background / Foreground */
+  --background:                  #f8faf9;   /* surface */
+  --foreground:                  #191c1c;   /* on-surface */
 
-* {
-  box-sizing: border-box;
+  /* Card */
+  --card:                        #ffffff;   /* surface-container-lowest */
+  --card-foreground:             #191c1c;
+
+  /* Popover */
+  --popover:                     #ffffff;
+  --popover-foreground:          #191c1c;
+
+  /* Primary — Freshness green */
+  --primary:                     #006e1c;
+  --primary-foreground:          #ffffff;
+
+  /* Secondary — neutral (shadcn 버튼 호환용 중립 톤) */
+  --secondary:                   #f2f4f3;   /* surface-container-low */
+  --secondary-foreground:        #191c1c;
+
+  /* Muted */
+  --muted:                       #f2f4f3;   /* surface-container-low */
+  --muted-foreground:            #3f4948;   /* on-surface-variant */
+
+  /* Accent */
+  --accent:                      #eceeee;   /* surface-container */
+  --accent-foreground:           #191c1c;
+
+  /* Destructive */
+  --destructive:                 #ba1a1a;
+
+  /* Border / Input / Ring */
+  --border:                      #bec9c8;   /* outline-variant */
+  --input:                       #eceeee;   /* surface-container */
+  --ring:                        #006e1c;   /* primary for focus rings */
+
+  /* Charts — design palette 순서로 매핑 */
+  --chart-1:                     #006e1c;
+  --chart-2:                     #4caf50;
+  --chart-3:                     #0061a4;
+  --chart-4:                     #b02f00;
+  --chart-5:                     #ba1a1a;
+
+  /* Radius — design doc: xl = 1.5rem (cards), md = 0.75rem (elements) */
+  --radius:                      0.75rem;
+
+  /* Sidebar */
+  --sidebar:                     #f8faf9;   /* surface */
+  --sidebar-foreground:          #3f4948;   /* on-surface-variant */
+  --sidebar-primary:             #006e1c;   /* primary */
+  --sidebar-primary-foreground:  #ffffff;   /* on-primary */
+  --sidebar-accent:              #f2f4f3;   /* surface-container-low */
+  --sidebar-accent-foreground:   #191c1c;   /* on-surface */
+  --sidebar-border:              transparent;
+  --sidebar-ring:                #006e1c;
+}
+
+/* dark 모드는 현재 사용하지 않으므로 light 값 유지 */
+.dark {
+  --background:                  #f8faf9;
+  --foreground:                  #191c1c;
+  --card:                        #ffffff;
+  --card-foreground:             #191c1c;
+  --popover:                     #ffffff;
+  --popover-foreground:          #191c1c;
+  --primary:                     #006e1c;
+  --primary-foreground:          #ffffff;
+  --secondary:                   #f2f4f3;
+  --secondary-foreground:        #191c1c;
+  --muted:                       #f2f4f3;
+  --muted-foreground:            #3f4948;
+  --accent:                      #eceeee;
+  --accent-foreground:           #191c1c;
+  --destructive:                 #ba1a1a;
+  --border:                      #bec9c8;
+  --input:                       #eceeee;
+  --ring:                        #006e1c;
+  --sidebar:                     #f2f4f3;
+  --sidebar-foreground:          #3f4948;
+  --sidebar-primary:             #006e1c;
+  --sidebar-primary-foreground:  #ffffff;
+  --sidebar-accent:              #eceeee;
+  --sidebar-accent-foreground:   #191c1c;
+  --sidebar-border:              transparent;
+  --sidebar-ring:                #006e1c;
+}
+
+/* ─── shadcn @theme inline (Tailwind ↔ CSS 변수 브릿지) ────── */
+@theme inline {
+  --font-sans:               var(--font-inter), 'Inter', sans-serif;
+  --font-heading:            var(--font-nanumgothic), 'Nanum Gothic', sans-serif;
+
+  --color-background:        var(--background);
+  --color-foreground:        var(--foreground);
+  --color-card:              var(--card);
+  --color-card-foreground:   var(--card-foreground);
+  --color-popover:           var(--popover);
+  --color-popover-foreground:var(--popover-foreground);
+  --color-primary:           var(--primary);
+  --color-primary-foreground:var(--primary-foreground);
+  --color-secondary:         var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted:             var(--muted);
+  --color-muted-foreground:  var(--muted-foreground);
+  --color-accent:            var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive:       var(--destructive);
+  --color-border:            var(--border);
+  --color-input:             var(--input);
+  --color-ring:              var(--ring);
+  --color-chart-1:           var(--chart-1);
+  --color-chart-2:           var(--chart-2);
+  --color-chart-3:           var(--chart-3);
+  --color-chart-4:           var(--chart-4);
+  --color-chart-5:           var(--chart-5);
+  --radius-sm:               calc(var(--radius) * 0.6);
+  --radius-md:               calc(var(--radius) * 0.8);
+  --radius-lg:               var(--radius);
+  --radius-xl:               calc(var(--radius) * 1.4);
+  --radius-2xl:              calc(var(--radius) * 1.8);
+  --radius-3xl:              calc(var(--radius) * 2.2);
+  --color-sidebar:                    var(--sidebar);
+  --color-sidebar-foreground:         var(--sidebar-foreground);
+  --color-sidebar-primary:            var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent:             var(--sidebar-accent);
+  --color-sidebar-accent-foreground:  var(--sidebar-accent-foreground);
+  --color-sidebar-border:             var(--sidebar-border);
+  --color-sidebar-ring:               var(--sidebar-ring);
+}
+
+/* ─── Font Utilities ───────────────────────────────────────── */
+@layer utilities {
+  .font-display {
+    font-family: var(--font-nanumgothic), 'Nanum Gothic', sans-serif;
+  }
+  .font-body {
+    font-family: var(--font-inter), 'Inter', sans-serif;
+  }
+  .shadow-ambient {
+    box-shadow: 0px 12px 32px rgba(25, 28, 28, 0.06);
+  }
+}
+
+/* ─── Base ─────────────────────────────────────────────────── */
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+    box-sizing: border-box;
+  }
+  html, body {
+    padding: 0;
+    margin: 0;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-inter), 'Inter', sans-serif;
+  }
 }
