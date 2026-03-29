@@ -25,15 +25,15 @@ const ReviewHighlightsSection = ({
     <section id="reviews" className="mt-20">
       <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
         <div>
-          <p className="text-xs font-semibold uppercase tracking-[0.3em] text-indigo-300">
+          <p className="text-xs font-semibold uppercase tracking-[0.3em] text-emerald-600">
             {eyebrow}
           </p>
-          <h2 className="mt-2 text-3xl font-bold text-white">{title}</h2>
-          <p className="mt-1 text-slate-400">{description}</p>
+          <h2 className="mt-2 text-3xl font-bold text-slate-900">{title}</h2>
+          <p className="mt-1 text-slate-500">{description}</p>
         </div>
         <Link
           href={cta.href}
-          className="text-sm font-semibold text-white underline-offset-4 hover:underline"
+          className="text-sm font-semibold text-emerald-600 underline-offset-4 hover:underline"
         >
           {cta.label}
         </Link>
@@ -42,12 +42,17 @@ const ReviewHighlightsSection = ({
         {reviews.map((review) => (
           <figure
             key={review.name}
-            className="rounded-3xl border border-white/10 bg-slate-900/70 p-6 text-left shadow-lg shadow-black/20"
+            className="rounded-3xl border border-slate-200 bg-white p-6 text-left shadow-sm"
           >
-            <p className="text-slate-300">{review.quote}</p>
-            <figcaption className="mt-6 text-sm font-semibold text-white">
-              {review.name}
-              <span className="ml-2 text-xs font-normal text-slate-400">{review.role}</span>
+            <p className="text-slate-600 leading-relaxed">&ldquo;{review.quote}&rdquo;</p>
+            <figcaption className="mt-6 flex items-center gap-3">
+              <div className="flex h-9 w-9 items-center justify-center rounded-full bg-emerald-100 text-sm font-bold text-emerald-700">
+                {review.name[0]}
+              </div>
+              <div>
+                <p className="text-sm font-semibold text-slate-900">{review.name}</p>
+                <p className="text-xs text-slate-500">{review.role}</p>
+              </div>
             </figcaption>
           </figure>
         ))}

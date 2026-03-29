@@ -1,18 +1,24 @@
 import "./globals.css";
 import type { ReactNode } from "react";
 import Navigation from "@/src/components/layout/Navigation";
+import {cookies} from 'next/headers';
+import { TOKEN_COOKIE } from "@/src/lib/definitions";
 
 export const metadata = {
-  title: "Bangtalchul | 방탈출 리뷰 큐레이션",
-  description: "방탈출러를 위한 리뷰, 랭킹, 큐레이션 플랫폼",
+  title: "냉부 | 냉장고를 부탁해",
+  description: "냉장고 속 식재료로 유통기한 관리와 맞춤 레시피를 한번에.",
 };
 
-export default function RootLayout({ children }: { children: ReactNode }) {
+export default async function RootLayout({ children }: { children: ReactNode }) {
+  const cookiesStore = await cookies()
+  const token = cookiesStore.get(TOKEN_COOKIE)
+  const isLoggedIn = !!token;
+
   return (
     <html lang="ko">
-      <body className="bg-slate-950 text-white antialiased">
+      <body className="bg-stone-50 text-slate-900 antialiased">
         <div className="min-h-screen">
-          <Navigation />
+          <Navigation isLoggedIn={isLoggedIn}/>
           {children}
         </div>
       </body>

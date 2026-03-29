@@ -1,6 +1,6 @@
 import HeroSection from "@/src/components/sections/HeroSection";
 import RankingSection, {
-  FeaturedRoom,
+  FeaturedRecipe,
 } from "@/src/components/sections/RankingSection";
 import ReviewHighlightsSection, {
   ReviewHighlight,
@@ -10,78 +10,78 @@ import CommunitySection, {
 } from "@/src/components/sections/CommunitySection";
 
 const heroStats = [
-  { label: "일주일 리뷰", value: "1,240+" },
-  { label: "등록 테마", value: "580" },
-  { label: "단골 팀", value: "8.4K" },
-  { label: "평균 평점", value: "4.8 / 5" },
+  { label: "관리 중인 식재료", value: "12만+" },
+  { label: "제공 레시피", value: "3,200+" },
+  { label: "절약된 식재료", value: "8.1K" },
+  { label: "평균 유통기한 절감", value: "4.2일" },
 ];
 
-const featuredRooms: FeaturedRoom[] = [
+const featuredRecipes: FeaturedRecipe[] = [
   {
-    title: "네온 마인드",
-    studio: "Seoul Mystery Lab",
-    location: "홍대 · 사이버 범죄 추적",
-    difficulty: "난이도 ★★★★☆",
+    title: "두부 된장찌개",
+    category: "한식 · 국물요리",
+    description: "두부, 애호박, 된장만 있으면 완성",
+    difficulty: "난이도 ★☆☆☆☆",
     rating: 4.9,
-    reviewCount: 412,
-    tags: ["추리", "긴장감", "테크 기반"],
+    reviewCount: 521,
+    tags: ["두부", "된장", "애호박"],
   },
   {
-    title: "길 위의 서커스",
-    studio: "Keysome",
-    location: "건대 · 감성 스토리",
+    title: "계란 볶음밥",
+    category: "한식 · 볶음",
+    description: "냉장고 자투리 재료 총출동",
     difficulty: "난이도 ★★☆☆☆",
     rating: 4.7,
-    reviewCount: 268,
-    tags: ["스토리텔링", "협동", "몰입감"],
+    reviewCount: 389,
+    tags: ["계란", "밥", "당근", "파"],
   },
   {
-    title: "서늘한 수장고",
-    studio: "Problem Room",
-    location: "혜화 · 리얼 호러",
-    difficulty: "난이도 ★★★★★",
+    title: "닭가슴살 샐러드",
+    category: "샐러드 · 건강식",
+    description: "유통기한 임박 채소 활용 레시피",
+    difficulty: "난이도 ★☆☆☆☆",
     rating: 4.8,
-    reviewCount: 353,
-    tags: ["공포", "연기력", "극강난도"],
+    reviewCount: 274,
+    tags: ["닭가슴살", "양상추", "토마토"],
   },
 ];
 
 const reviewHighlights: ReviewHighlight[] = [
   {
-    name: "윤지",
-    role: "방탈출 기록러",
+    name: "수현",
+    role: "자취 3년차",
     quote:
-      "Bangtalchul 덕분에 난이도와 분위기 필터링이 쉬워져서 취향 맞는 테마만 골라가기 훨씬 편해졌어요.",
+      "냉부 쓰고 나서 유통기한 넘겨서 버리는 식재료가 거의 없어졌어요. 알림 기능이 특히 유용해요.",
   },
   {
-    name: "한결",
-    role: "신규 스토리 헌터",
+    name: "민준",
+    role: "요리 입문자",
     quote:
-      "리뷰만 읽어도 서사가 그려져서 방문 전 설렘이 생겨요. 실제 방문 후에는 바로 후기를 남기게 되는 UX!",
+      "냉장고에 뭐가 있는지 입력하면 만들 수 있는 레시피를 바로 추천해줘서 요리 고민이 사라졌어요.",
   },
   {
-    name: "은별",
-    role: "팀 플레이 마스터",
+    name: "지아",
+    role: "살림 꼼꼼파",
     quote:
-      "협동 요소 평가가 따로 있는 게 신의 한 수. 파티 특성에 따라 추천을 받아서 실패 없는 라운드를 만들었어요.",
+      "가족 냉장고를 공유해서 같이 관리하니까 장 볼 때도 중복 구매가 없어졌어요. 식비가 확실히 줄었어요.",
   },
 ];
 
 const communityPosts: CommunityPost[] = [
   {
-    title: "2024 가을 시즌 신규 테마 총정리",
-    author: "큐어",
-    category: "인기 글",
+    title: "유통기한 D-3 재료로 만드는 빠른 한 끼 5선",
+    author: "냉장고탐험가",
+    category: "인기 레시피",
   },
   {
-    title: "초심자 추천 : 몰입형 스토리 best 5",
-    author: "탈출로그",
-    category: "큐레이터 pick",
+    title: "채소 신선하게 오래 보관하는 방법 총정리",
+    author: "살림연구소",
+    category: "보관 꿀팁",
   },
   {
-    title: "밤 10시 이후도 재밌게 운영하는 지점 모음",
-    author: "Esc in the City",
-    category: "야간 팁",
+    title: "자취생 냉장고 필수 식재료 리스트",
+    author: "자취왕",
+    category: "초보 가이드",
   },
 ];
 
@@ -89,43 +89,43 @@ export default function HomePage() {
   return (
     <main className="mx-auto max-w-6xl px-4 pb-16 pt-10 sm:px-6 lg:px-8 lg:pt-16">
       <HeroSection
-        eyebrow="Made for Escape Lovers"
-        headline="방탈출의 모든 순간을 큐레이션하다."
-        description="리뷰 데이터와 실시간 랭킹을 기반으로 팀의 성향, 난이도 취향, 방문 가능한 시간까지 고려한 맞춤 테마를 추천해 드려요."
+        eyebrow="Smart Fridge Manager"
+        headline="냉장고 속 재료로, 오늘의 요리를 완성하세요."
+        description="식재료를 등록하면 유통기한을 알아서 관리하고, 지금 있는 재료로 만들 수 있는 레시피를 바로 추천해드려요."
         stats={heroStats}
-        primaryCta={{ label: "인기 랭킹 보기", href: "#ranking" }}
-        secondaryCta={{ label: "나의 큐레이션 받기", href: "/login" }}
+        primaryCta={{ label: "레시피 추천 받기", href: "#recipes" }}
+        secondaryCta={{ label: "냉장고 등록하기", href: "/login" }}
       />
       <RankingSection
-        eyebrow="Weekly Ranking"
-        title="이번 주 집중 탐험 테마"
-        description="몰입도, 공포도, 협동 요소까지 한 눈에."
-        cta={{ label: "커뮤니티 분석 보기 →", href: "#community" }}
-        rooms={featuredRooms}
+        eyebrow="Today's Recipes"
+        title="지금 재료로 만들 수 있는 추천 레시피"
+        description="유통기한 임박 재료를 우선으로, 낭비 없는 한 끼."
+        cta={{ label: "레시피 더 보기 →", href: "#community" }}
+        recipes={featuredRecipes}
       />
       <ReviewHighlightsSection
         eyebrow="Real Stories"
-        title="생생한 리뷰 하이라이트"
-        description="분위기를 먼저 느끼고, 팀에 맞게 예약하세요."
-        cta={{ label: "내 후기 남기기", href: "/login" }}
+        title="냉부 사용자들의 이야기"
+        description="식비 절약부터 요리 습관 변화까지."
+        cta={{ label: "후기 남기기", href: "/login" }}
         reviews={reviewHighlights}
       />
       <CommunitySection
         eyebrow="Community"
-        title="큐레이터들의 최신 포스트"
-        ctaLabel="제보하기"
+        title="냉장고 꿀팁 모음"
+        ctaLabel="팁 공유하기"
         posts={communityPosts}
         spotlight={{
-          eyebrow: "Personalized Flow",
-          title: "팀 분위기에 맞춘 추천",
+          eyebrow: "Smart Management",
+          title: "유통기한 걱정 없는 냉장고",
           description:
-            "플레이 인원, 경험 레벨, 좋아하는 장르, 스케줄만 입력하면 Bangtalchul이 일정과 이동 동선까지 고려한 플랜을 제안해요.",
+            "식재료를 등록하면 냉부가 유통기한 순으로 정리하고, 임박 식재료는 미리 알림을 보내드려요. 남은 재료로 만들 수 있는 레시피까지 자동으로 추천해드립니다.",
           bullets: [
-            "실시간 예약 가능 여부 표시",
-            "팀원 호흡을 고려한 협동 지수",
-            "스포 없는 리뷰 카드로 분위기 파악",
+            "유통기한 D-3 알림 자동 발송",
+            "보유 식재료 기반 레시피 즉시 추천",
+            "가족·룸메이트와 냉장고 공유 관리",
           ],
-          cta: { label: "큐레이션 시작하기", href: "/login" },
+          cta: { label: "냉장고 관리 시작하기", href: "/login" },
         }}
       />
     </main>
