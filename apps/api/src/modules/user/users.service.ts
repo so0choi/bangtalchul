@@ -4,7 +4,7 @@ import { PrismaService } from '@db/prisma.service';
 import { UserModel } from '@prisma/models';
 import { CreateUserInput } from './dtos/create.dto';
 import { UpdateDto } from './dtos/update.dto';
-import { log } from 'node:console';
+import { Result } from '@common/types/result.type';
 
 @Injectable()
 export class UsersService {
@@ -14,7 +14,9 @@ export class UsersService {
 
   constructor(private readonly prismaService: PrismaService) {}
 
-  async create(createDto: CreateUserInput): Promise<UserModel> {
+  // TODO: email availability check
+
+  async create(createDto: CreateUserInput): Promise<Result<UserModel>> {
     const { email, provider } = createDto;
 
     const exists = await this.prismaService.user.findUnique({
@@ -22,18 +24,24 @@ export class UsersService {
     });
 
     if (exists) {
-      throw new Error(`User '${email}' already exists`);
+      return { ok: false, error: 'EMAIL_IN_USE' };
     }
 
     const hashedPassword = await bcrypt.hash(createDto.password, 10);
-
-    return this.prismaService.user.create({
-      data: {
-        ...createDto,
-        password: hashedPassword,
-        provider: provider ?? 'local',
-      },
-    });
+    try {
+      return {
+        ok: true,
+        data: await this.prismaService.user.create({
+          data: {
+            ...createDto,
+            password: hashedPassword,
+            provider: provider ?? 'local',
+          },
+        }),
+      };
+    } catch (err) {
+      return { ok: false, error: err };
+    }
   }
 
   findOneById(id: number): Promise<UserModel> {

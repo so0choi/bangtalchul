@@ -19,12 +19,12 @@ export class UsersResolver {
   async createUser(
     @Args('createUserInput') input: CreateUserInput,
   ): Promise<CreateUserOutput> {
-    try {
-      const user = await this.userService.create(input);
-      return { ok: true, user };
-    } catch (e) {
-      return { ok: false, message: e.message };
+    const result = await this.userService.create(input);
+    if (result.ok === false) {
+      return { ok: false, message: result.error };
     }
+
+    return { ok: true, user: result.data };
   }
 
   @Query(() => User, {
