@@ -1,5 +1,7 @@
 # CLAUDE.md
 
+@AGENTS.md
+
 ## Skills
 
 @.claude/skills/nextjs-advanced-routing/SKILL.md
