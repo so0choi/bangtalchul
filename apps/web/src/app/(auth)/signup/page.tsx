@@ -2,26 +2,26 @@ import SignupIntroCard from "@/src/components/signup/SignupIntroCard";
 import SignupForm from "@/src/components/signup/SignupForm";
 
 export const metadata = {
-  title: "회원가입 | Bangtalchul",
-  description: "방탈출 리뷰와 큐레이션을 즐기기 위한 계정을 생성하세요.",
+  title: "회원가입 | 냉부",
+  description: "냉장고 식재료 관리와 맞춤 레시피 추천을 위한 계정을 만드세요.",
 };
 
 export default function SignupPage() {
   return (
     <main className="mx-auto flex max-w-5xl flex-col gap-12 px-4 pb-16 pt-12 sm:px-6 lg:flex-row lg:px-8 lg:pt-16">
       <SignupIntroCard
-        eyebrow="Start Your Story"
-        title="팀의 취향을 기록하고, 더 정교한 추천을 받아보세요."
-        description="즐겨 찾는 테마와 플레이 스타일을 입력하면 Bangtalchul이 팀에게 맞는 라운드를 큐레이션합니다. 시즌 한정 이벤트와 얼리버드 알림도 받아보세요."
+        eyebrow="Join 냉부"
+        title="식재료를 등록하고, 낭비 없는 식탁을 만들어 보세요."
+        description="냉장고 속 재료를 입력하면 냉부가 유통기한을 관리하고 오늘 만들 수 있는 레시피를 추천해드려요. 음식물 쓰레기는 줄이고 식비는 아끼세요."
         progress={{
-          title: "PROGRESS",
-          subtitle: "누적 기록 12,480회",
-          details: "팀별 맞춤 추천 98% 만족",
+          title: "STATS",
+          subtitle: "절약된 식재료 8,100개+",
+          details: "평균 월 식비 23% 절감 효과",
         }}
         benefits={[
-          "큐레이터 전용 테마 프리뷰",
-          "방문 루트 · 시간표 맞춤 제안",
-          "협력 팀 매칭 베타 참여권",
+          "유통기한 D-3 자동 알림",
+          "보유 식재료 기반 레시피 즉시 추천",
+          "가족·룸메이트와 냉장고 공유 관리",
         ]}
       />
       <SignupForm />

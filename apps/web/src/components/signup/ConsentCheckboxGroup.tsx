@@ -11,12 +11,12 @@ const consentOptions = [
 
 const ConsentCheckboxGroup = () => {
   return (
-    <div className="rounded-2xl border border-white/10 bg-white/5 p-4 text-xs text-slate-300">
+    <div className="rounded-xl border border-slate-200 bg-slate-50 p-4 text-xs text-slate-600">
       {consentOptions.map((option) => (
         <label key={option.label} className="mt-3 flex items-start gap-3 first:mt-0">
           <input
             type="checkbox"
-            className="mt-1 h-4 w-4 rounded border-white/20 bg-white/10 text-indigo-500 focus:ring-indigo-500/60"
+            className="mt-0.5 h-4 w-4 rounded border-slate-300 text-emerald-600 focus:ring-emerald-500/40"
           />
           <span>{option.label}</span>
         </label>
