@@ -26,7 +26,7 @@ model User {
   sessions Session[]
   preferenceTags String[]
   phone   String? 
-
+  ingredients Ingredient[]
 }
 
 model Review {
@@ -46,4 +46,60 @@ model Session {
   refreshToken String @unique
   expiresAt    DateTime
   createdAt    DateTime @default(now())
+}
+
+model Ingredient {
+  id         Int                 @id @default(autoincrement())
+  user       User                @relation(fields: [userId], references: [id])
+  userId     Int
+  createdAt  DateTime            @default(now())
+  updatedAt  DateTime            @updatedAt
+
+  name       String
+  price      Int?
+  quantity   Float?
+  unit       IngredientUnit?
+  expireAt   DateTime?
+
+  category   IngredientCategory?
+  storage    StorageType
+  status     IngredientStatus    @default(FRESH)
+}
+
+enum IngredientCategory {
+  MEAT
+  SEAFOOD
+  VEGETABLE
+  FRUIT
+  DAIRY
+  EGG
+  GRAIN
+  SAUCE
+  DRINK
+  SNACK
+  ETC
+}
+
+enum StorageType {
+  FRIDGE
+  FREEZER
+  PANTRY
+}
+
+enum IngredientStatus {
+  FRESH
+  EXPIRING_SOON
+  EXPIRED
+  USED
+  DISCARDED
+}
+
+enum IngredientUnit {
+  EA
+  G
+  KG
+  ML
+  L
+  PACK
+  BOTTLE
 }
