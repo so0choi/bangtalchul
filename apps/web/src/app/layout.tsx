@@ -22,7 +22,7 @@ const inter = Inter({
 });
 
 export const metadata = {
-  title: "냉부 | 냉장고를 부탁해",
+  title: "잇미 | EAT ME",
   description: "냉장고 속 식재료로 유통기한 관리와 맞춤 레시피를 한번에.",
 };
 

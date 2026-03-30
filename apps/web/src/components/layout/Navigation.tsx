@@ -24,13 +24,13 @@ const Navigation: React.FC<{ isLoggedIn: boolean }> = ({ isLoggedIn }) => {
           <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
             <div className="flex items-center gap-2">
               <Link href="/">
-              <div className="flex">
-              <Image alt="logo" src="/logo.png" width={80} height={80}/>
+              <div className="flex items-center gap-4"> 
+              <Image alt="logo" src="/logo.png" width={35} height={35} className="w-auto" loading="lazy" />
               <div>
                 <p className="text-xs font-medium text-on-surface-variant">
-                  냉장고를 부탁해
+                  EAT ME
                 </p>
-                <p className="font-display text-lg font-bold text-on-surface leading-tight">냉부</p>
+                <p className="font-display text-lg font-bold text-on-surface leading-tight">잇미</p>
                 </div>
                 </div>
               </Link>
