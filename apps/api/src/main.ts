@@ -7,6 +7,7 @@ import {
   NestFastifyApplication,
 } from '@nestjs/platform-fastify';
 import { WinstonService } from '@common/logger/winston.service';
+import { ExceptionFilter } from './filters/global-exception.filter';
 
 config();
 
@@ -16,6 +17,7 @@ async function bootstrap() {
     new FastifyAdapter(),
   );
   app.useLogger(app.get(WinstonService));
+  app.useGlobalFilters(new ExceptionFilter());
 
   await app.listen(4000);
 }
