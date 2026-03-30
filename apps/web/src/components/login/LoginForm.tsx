@@ -67,7 +67,7 @@ const LoginForm = () => {
         {state?.error && (
           <p className="rounded-lg bg-red-50 px-4 py-3 text-sm text-red-600">{state.error}</p>
         )}
-        <Button type="submit" className={pending ? 'cursor-progress opacity-80' : ''}>
+        <Button type="submit" className={ "w-full py-4"+(pending ? 'cursor-progress opacity-80' : '')}>
           {pending ? '로그인 중...' : '로그인'}
         </Button>
       </Form>
