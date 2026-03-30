@@ -1,0 +1,24 @@
+{
+  "folders": [
+    {
+      "name": "web",
+      "path": "apps/web"
+    },
+    {
+      "name": "api",
+      "path": "apps/api"
+    },
+    {
+      "name": "root",
+      "path": "."
+    }
+  ],
+  "settings": {
+    "typescript.tsdk": "apps/web/node_modules/typescript/lib",
+    "files.exclude": {
+      "**/node_modules": true,
+      "**/.next": true,
+      "**/dist": true
+    }
+  }
+}
