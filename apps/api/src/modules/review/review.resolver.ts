@@ -1,10 +1,13 @@
 import { GqlAuthGuard } from '@common/auth/guards/gql.guard';
 import { UseGuards } from '@nestjs/common';
 import { Args, Mutation, Resolver } from '@nestjs/graphql';
-import { CreateReviewInput, CreateReviewOutput } from './dtos/createReview.dto';
+import {
+  CreateReviewInput,
+  CreateReviewOutput,
+} from './dtos/create-review.dto';
 import { Review } from './models/review.model';
 import { ReviewService } from './review.service';
-import { MutationResponse } from '@common/dtos/mutation-response.dto';
+import { CoreResponse } from '@common/dtos/core-response.dto';
 import { CurrentUser } from '@common/decorators/getCurrentUser';
 import { User } from '@modules/user/models/user.model';
 

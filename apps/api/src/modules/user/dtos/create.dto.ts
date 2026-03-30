@@ -1,4 +1,4 @@
-import { MutationResponse } from '@common/dtos/mutation-response.dto';
+import { CoreResponse } from '@common/dtos/core-response.dto';
 import { Field, InputType, ObjectType } from '@nestjs/graphql';
 import { User } from '../models/user.model';
 
@@ -24,7 +24,7 @@ export class CreateUserInput {
 }
 
 @ObjectType()
-export class CreateUserOutput extends MutationResponse {
+export class CreateUserOutput extends CoreResponse {
   @Field(() => User, { nullable: true })
   user?: User;
 }

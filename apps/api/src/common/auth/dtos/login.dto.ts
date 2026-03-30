@@ -14,10 +14,10 @@ export class LoginDto extends PickType(CreateUserInput, ['email', 'password']) {
   autologin?: boolean;
 }
 
-import { MutationResponse } from '@common/dtos/mutation-response.dto';
+import { CoreResponse } from '@common/dtos/core-response.dto';
 
 @ObjectType()
-export class LoginOutput extends MutationResponse {
+export class LoginOutput extends CoreResponse {
   @Field({ nullable: true })
   accessToken?: string;
 

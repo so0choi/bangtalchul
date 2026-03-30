@@ -1,6 +1,6 @@
 import { Field, InputType, ObjectType, OmitType } from '@nestjs/graphql';
 
-import { MutationResponse } from '@common/dtos/mutation-response.dto';
+import { CoreResponse } from '@common/dtos/core-response.dto';
 import { Review } from '../models/review.model';
 
 @InputType()
@@ -13,7 +13,7 @@ export class CreateReviewInput extends OmitType(
 }
 
 @ObjectType()
-export class CreateReviewOutput extends MutationResponse {
+export class CreateReviewOutput extends CoreResponse {
   @Field()
   review?: Review;
 }

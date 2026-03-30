@@ -2,7 +2,7 @@ import { Args, Mutation, Resolver } from '@nestjs/graphql';
 import { Public } from '@common/decorators/setMetadata';
 import { LoginDto, LoginOutput } from './dtos/login.dto';
 import { AuthService } from './auth.service';
-import { MutationResponse } from '@common/dtos/mutation-response.dto';
+import { CoreResponse } from '@common/dtos/core-response.dto';
 import { CurrentUser } from '@common/decorators/getCurrentUser';
 
 @Resolver()
@@ -20,8 +20,8 @@ export class AuthResolver {
     }
   }
 
-  @Mutation(() => MutationResponse)
-  async logout(@CurrentUser() user: { id: number }): Promise<MutationResponse> {
+  @Mutation(() => CoreResponse)
+  async logout(@CurrentUser() user: { id: number }): Promise<CoreResponse> {
     try {
       await this.authService.logout(user.id);
       return { ok: true };
