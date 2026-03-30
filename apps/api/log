@@ -965,3 +965,262 @@ Invalid `this.prismaService.user.findUnique()` invocation in
 [90m2026-03-28 22:43:58[39m ℹ️ [36m[1mINFO[22m[39m: Mapped {/google/callback, GET} route
 [90m2026-03-28 22:43:58[39m ℹ️ [36m[1mINFO[22m[39m: Mapped {/graphql, POST} route
 [90m2026-03-28 22:43:58[39m ℹ️ [36m[1mINFO[22m[39m: Nest application successfully started
+[90m2026-03-29 23:09:25[39m ℹ️ [36m[1mINFO[22m[39m: AppController {/}:
+[90m2026-03-29 23:09:25[39m ℹ️ [36m[1mINFO[22m[39m: Mapped {/, GET} route
+[90m2026-03-29 23:09:25[39m ℹ️ [36m[1mINFO[22m[39m: AuthController {/}:
+[90m2026-03-29 23:09:25[39m ℹ️ [36m[1mINFO[22m[39m: Mapped {/google, GET} route
+[90m2026-03-29 23:09:25[39m ℹ️ [36m[1mINFO[22m[39m: Mapped {/google/callback, GET} route
+[90m2026-03-29 23:09:29[39m ℹ️ [36m[1mINFO[22m[39m: Mapped {/graphql, POST} route
+[90m2026-03-29 23:09:29[39m ℹ️ [36m[1mINFO[22m[39m: Nest application successfully started
+[90m2026-03-29 23:14:47[39m ℹ️ [36m[1mINFO[22m[39m: AppController {/}:
+[90m2026-03-29 23:14:47[39m ℹ️ [36m[1mINFO[22m[39m: Mapped {/, GET} route
+[90m2026-03-29 23:14:47[39m ℹ️ [36m[1mINFO[22m[39m: AuthController {/}:
+[90m2026-03-29 23:14:47[39m ℹ️ [36m[1mINFO[22m[39m: Mapped {/google, GET} route
+[90m2026-03-29 23:14:47[39m ℹ️ [36m[1mINFO[22m[39m: Mapped {/google/callback, GET} route
+[90m2026-03-29 23:14:48[39m ℹ️ [36m[1mINFO[22m[39m: Mapped {/graphql, POST} route
+[90m2026-03-29 23:14:48[39m ℹ️ [36m[1mINFO[22m[39m: Nest application successfully started
+[90m2026-03-30 22:48:35[39m ℹ️ [36m[1mINFO[22m[39m: AppController {/}:
+[90m2026-03-30 22:48:35[39m ℹ️ [36m[1mINFO[22m[39m: Mapped {/, GET} route
+[90m2026-03-30 22:48:35[39m ℹ️ [36m[1mINFO[22m[39m: AuthController {/}:
+[90m2026-03-30 22:48:35[39m ℹ️ [36m[1mINFO[22m[39m: Mapped {/google, GET} route
+[90m2026-03-30 22:48:35[39m ℹ️ [36m[1mINFO[22m[39m: Mapped {/google/callback, GET} route
+[90m2026-03-30 22:48:36[39m ℹ️ [36m[1mINFO[22m[39m: Mapped {/graphql, POST} route
+[90m2026-03-30 22:48:36[39m ℹ️ [36m[1mINFO[22m[39m: Nest application successfully started
+[90m2026-03-30 22:48:46[39m ℹ️ [36m[1mINFO[22m[39m: AppController {/}:
+[90m2026-03-30 22:48:46[39m ℹ️ [36m[1mINFO[22m[39m: Mapped {/, GET} route
+[90m2026-03-30 22:48:46[39m ℹ️ [36m[1mINFO[22m[39m: AuthController {/}:
+[90m2026-03-30 22:48:46[39m ℹ️ [36m[1mINFO[22m[39m: Mapped {/google, GET} route
+[90m2026-03-30 22:48:46[39m ℹ️ [36m[1mINFO[22m[39m: Mapped {/google/callback, GET} route
+[90m2026-03-30 22:48:47[39m ℹ️ [36m[1mINFO[22m[39m: Mapped {/graphql, POST} route
+[90m2026-03-30 22:48:47[39m ℹ️ [36m[1mINFO[22m[39m: Nest application successfully started
+[90m2026-03-30 22:48:52[39m ℹ️ [36m[1mINFO[22m[39m: AppController {/}:
+[90m2026-03-30 22:48:52[39m ℹ️ [36m[1mINFO[22m[39m: Mapped {/, GET} route
+[90m2026-03-30 22:48:52[39m ℹ️ [36m[1mINFO[22m[39m: AuthController {/}:
+[90m2026-03-30 22:48:52[39m ℹ️ [36m[1mINFO[22m[39m: Mapped {/google, GET} route
+[90m2026-03-30 22:48:52[39m ℹ️ [36m[1mINFO[22m[39m: Mapped {/google/callback, GET} route
+[90m2026-03-30 22:48:52[39m ℹ️ [36m[1mINFO[22m[39m: Mapped {/graphql, POST} route
+[90m2026-03-30 22:48:52[39m ℹ️ [36m[1mINFO[22m[39m: Nest application successfully started
+[90m2026-03-30 23:01:19[39m ℹ️ [36m[1mINFO[22m[39m: AppController {/}:
+[90m2026-03-30 23:01:19[39m ℹ️ [36m[1mINFO[22m[39m: Mapped {/, GET} route
+[90m2026-03-30 23:01:19[39m ℹ️ [36m[1mINFO[22m[39m: AuthController {/}:
+[90m2026-03-30 23:01:19[39m ℹ️ [36m[1mINFO[22m[39m: Mapped {/google, GET} route
+[90m2026-03-30 23:01:19[39m ℹ️ [36m[1mINFO[22m[39m: Mapped {/google/callback, GET} route
+[90m2026-03-30 23:01:23[39m ℹ️ [36m[1mINFO[22m[39m: Mapped {/graphql, POST} route
+[90m2026-03-30 23:01:23[39m ℹ️ [36m[1mINFO[22m[39m: Nest application successfully started
+[90m2026-03-30 23:02:22[39m ℹ️ [36m[1mINFO[22m[39m: AppController {/}:
+[90m2026-03-30 23:02:22[39m ℹ️ [36m[1mINFO[22m[39m: Mapped {/, GET} route
+[90m2026-03-30 23:02:22[39m ℹ️ [36m[1mINFO[22m[39m: AuthController {/}:
+[90m2026-03-30 23:02:22[39m ℹ️ [36m[1mINFO[22m[39m: Mapped {/google, GET} route
+[90m2026-03-30 23:02:22[39m ℹ️ [36m[1mINFO[22m[39m: Mapped {/google/callback, GET} route
+[90m2026-03-30 23:02:23[39m ℹ️ [36m[1mINFO[22m[39m: Mapped {/graphql, POST} route
+[90m2026-03-30 23:02:23[39m ℹ️ [36m[1mINFO[22m[39m: Nest application successfully started
+[90m2026-03-30 23:03:31[39m ℹ️ [36m[1mINFO[22m[39m: AppController {/}:
+[90m2026-03-30 23:03:31[39m ℹ️ [36m[1mINFO[22m[39m: Mapped {/, GET} route
+[90m2026-03-30 23:03:31[39m ℹ️ [36m[1mINFO[22m[39m: AuthController {/}:
+[90m2026-03-30 23:03:31[39m ℹ️ [36m[1mINFO[22m[39m: Mapped {/google, GET} route
+[90m2026-03-30 23:03:31[39m ℹ️ [36m[1mINFO[22m[39m: Mapped {/google/callback, GET} route
+[90m2026-03-30 23:03:32[39m ℹ️ [36m[1mINFO[22m[39m: Mapped {/graphql, POST} route
+[90m2026-03-30 23:03:32[39m ℹ️ [36m[1mINFO[22m[39m: Nest application successfully started
+[90m2026-03-30 23:03:46[39m ℹ️ [36m[1mINFO[22m[39m: AppController {/}:
+[90m2026-03-30 23:03:46[39m ℹ️ [36m[1mINFO[22m[39m: Mapped {/, GET} route
+[90m2026-03-30 23:03:46[39m ℹ️ [36m[1mINFO[22m[39m: AuthController {/}:
+[90m2026-03-30 23:03:46[39m ℹ️ [36m[1mINFO[22m[39m: Mapped {/google, GET} route
+[90m2026-03-30 23:03:46[39m ℹ️ [36m[1mINFO[22m[39m: Mapped {/google/callback, GET} route
+[90m2026-03-30 23:03:46[39m ℹ️ [36m[1mINFO[22m[39m: Mapped {/graphql, POST} route
+[90m2026-03-30 23:03:46[39m ℹ️ [36m[1mINFO[22m[39m: Nest application successfully started
+[90m2026-03-30 23:05:20[39m ℹ️ [36m[1mINFO[22m[39m: AppController {/}:
+[90m2026-03-30 23:05:20[39m ℹ️ [36m[1mINFO[22m[39m: Mapped {/, GET} route
+[90m2026-03-30 23:05:20[39m ℹ️ [36m[1mINFO[22m[39m: AuthController {/}:
+[90m2026-03-30 23:05:20[39m ℹ️ [36m[1mINFO[22m[39m: Mapped {/google, GET} route
+[90m2026-03-30 23:05:20[39m ℹ️ [36m[1mINFO[22m[39m: Mapped {/google/callback, GET} route
+[90m2026-03-30 23:05:21[39m ℹ️ [36m[1mINFO[22m[39m: Mapped {/graphql, POST} route
+[90m2026-03-30 23:05:21[39m ℹ️ [36m[1mINFO[22m[39m: Nest application successfully started
+[90m2026-03-30 23:06:07[39m ℹ️ [36m[1mINFO[22m[39m: AppController {/}:
+[90m2026-03-30 23:06:07[39m ℹ️ [36m[1mINFO[22m[39m: Mapped {/, GET} route
+[90m2026-03-30 23:06:07[39m ℹ️ [36m[1mINFO[22m[39m: AuthController {/}:
+[90m2026-03-30 23:06:07[39m ℹ️ [36m[1mINFO[22m[39m: Mapped {/google, GET} route
+[90m2026-03-30 23:06:07[39m ℹ️ [36m[1mINFO[22m[39m: Mapped {/google/callback, GET} route
+[90m2026-03-30 23:06:08[39m ℹ️ [36m[1mINFO[22m[39m: Mapped {/graphql, POST} route
+[90m2026-03-30 23:06:08[39m ℹ️ [36m[1mINFO[22m[39m: Nest application successfully started
+[90m2026-03-30 23:06:36[39m ℹ️ [36m[1mINFO[22m[39m: AppController {/}:
+[90m2026-03-30 23:06:36[39m ℹ️ [36m[1mINFO[22m[39m: Mapped {/, GET} route
+[90m2026-03-30 23:06:36[39m ℹ️ [36m[1mINFO[22m[39m: AuthController {/}:
+[90m2026-03-30 23:06:36[39m ℹ️ [36m[1mINFO[22m[39m: Mapped {/google, GET} route
+[90m2026-03-30 23:06:36[39m ℹ️ [36m[1mINFO[22m[39m: Mapped {/google/callback, GET} route
+[90m2026-03-30 23:06:38[39m ℹ️ [36m[1mINFO[22m[39m: Mapped {/graphql, POST} route
+[90m2026-03-30 23:06:38[39m ℹ️ [36m[1mINFO[22m[39m: Nest application successfully started
+[90m2026-03-30 23:06:44[39m ℹ️ [36m[1mINFO[22m[39m: AppController {/}:
+[90m2026-03-30 23:06:44[39m ℹ️ [36m[1mINFO[22m[39m: Mapped {/, GET} route
+[90m2026-03-30 23:06:44[39m ℹ️ [36m[1mINFO[22m[39m: AuthController {/}:
+[90m2026-03-30 23:06:44[39m ℹ️ [36m[1mINFO[22m[39m: Mapped {/google, GET} route
+[90m2026-03-30 23:06:44[39m ℹ️ [36m[1mINFO[22m[39m: Mapped {/google/callback, GET} route
+[90m2026-03-30 23:06:44[39m ℹ️ [36m[1mINFO[22m[39m: Mapped {/graphql, POST} route
+[90m2026-03-30 23:06:44[39m ℹ️ [36m[1mINFO[22m[39m: Nest application successfully started
+[90m2026-03-30 23:07:46[39m ℹ️ [36m[1mINFO[22m[39m: AppController {/}:
+[90m2026-03-30 23:07:46[39m ℹ️ [36m[1mINFO[22m[39m: Mapped {/, GET} route
+[90m2026-03-30 23:07:46[39m ℹ️ [36m[1mINFO[22m[39m: AuthController {/}:
+[90m2026-03-30 23:07:46[39m ℹ️ [36m[1mINFO[22m[39m: Mapped {/google, GET} route
+[90m2026-03-30 23:07:46[39m ℹ️ [36m[1mINFO[22m[39m: Mapped {/google/callback, GET} route
+[90m2026-03-30 23:07:47[39m ℹ️ [36m[1mINFO[22m[39m: Mapped {/graphql, POST} route
+[90m2026-03-30 23:07:47[39m ℹ️ [36m[1mINFO[22m[39m: Nest application successfully started
+[90m2026-03-30 23:07:55[39m ℹ️ [36m[1mINFO[22m[39m: AppController {/}:
+[90m2026-03-30 23:07:55[39m ℹ️ [36m[1mINFO[22m[39m: Mapped {/, GET} route
+[90m2026-03-30 23:07:55[39m ℹ️ [36m[1mINFO[22m[39m: AuthController {/}:
+[90m2026-03-30 23:07:55[39m ℹ️ [36m[1mINFO[22m[39m: Mapped {/google, GET} route
+[90m2026-03-30 23:07:55[39m ℹ️ [36m[1mINFO[22m[39m: Mapped {/google/callback, GET} route
+[90m2026-03-30 23:07:56[39m ℹ️ [36m[1mINFO[22m[39m: Mapped {/graphql, POST} route
+[90m2026-03-30 23:07:56[39m ℹ️ [36m[1mINFO[22m[39m: Nest application successfully started
+[90m2026-03-30 23:09:31[39m ℹ️ [36m[1mINFO[22m[39m: AppController {/}:
+[90m2026-03-30 23:09:31[39m ℹ️ [36m[1mINFO[22m[39m: Mapped {/, GET} route
+[90m2026-03-30 23:09:31[39m ℹ️ [36m[1mINFO[22m[39m: AuthController {/}:
+[90m2026-03-30 23:09:31[39m ℹ️ [36m[1mINFO[22m[39m: Mapped {/google, GET} route
+[90m2026-03-30 23:09:31[39m ℹ️ [36m[1mINFO[22m[39m: Mapped {/google/callback, GET} route
+[90m2026-03-30 23:09:32[39m ℹ️ [36m[1mINFO[22m[39m: Mapped {/graphql, POST} route
+[90m2026-03-30 23:09:32[39m ℹ️ [36m[1mINFO[22m[39m: Nest application successfully started
+[90m2026-03-30 23:09:50[39m ℹ️ [36m[1mINFO[22m[39m: AppController {/}:
+[90m2026-03-30 23:09:50[39m ℹ️ [36m[1mINFO[22m[39m: Mapped {/, GET} route
+[90m2026-03-30 23:09:50[39m ℹ️ [36m[1mINFO[22m[39m: AuthController {/}:
+[90m2026-03-30 23:09:50[39m ℹ️ [36m[1mINFO[22m[39m: Mapped {/google, GET} route
+[90m2026-03-30 23:09:50[39m ℹ️ [36m[1mINFO[22m[39m: Mapped {/google/callback, GET} route
+[90m2026-03-30 23:09:50[39m ℹ️ [36m[1mINFO[22m[39m: Mapped {/graphql, POST} route
+[90m2026-03-30 23:09:50[39m ℹ️ [36m[1mINFO[22m[39m: Nest application successfully started
+[90m2026-03-30 23:10:59[39m ℹ️ [36m[1mINFO[22m[39m: AppController {/}:
+[90m2026-03-30 23:10:59[39m ℹ️ [36m[1mINFO[22m[39m: Mapped {/, GET} route
+[90m2026-03-30 23:10:59[39m ℹ️ [36m[1mINFO[22m[39m: AuthController {/}:
+[90m2026-03-30 23:10:59[39m ℹ️ [36m[1mINFO[22m[39m: Mapped {/google, GET} route
+[90m2026-03-30 23:10:59[39m ℹ️ [36m[1mINFO[22m[39m: Mapped {/google/callback, GET} route
+[90m2026-03-30 23:10:59[39m ℹ️ [36m[1mINFO[22m[39m: Mapped {/graphql, POST} route
+[90m2026-03-30 23:10:59[39m ℹ️ [36m[1mINFO[22m[39m: Nest application successfully started
+[90m2026-03-30 23:25:13[39m ℹ️ [36m[1mINFO[22m[39m: AppController {/}:
+[90m2026-03-30 23:25:13[39m ℹ️ [36m[1mINFO[22m[39m: Mapped {/, GET} route
+[90m2026-03-30 23:25:13[39m ℹ️ [36m[1mINFO[22m[39m: AuthController {/}:
+[90m2026-03-30 23:25:13[39m ℹ️ [36m[1mINFO[22m[39m: Mapped {/google, GET} route
+[90m2026-03-30 23:25:13[39m ℹ️ [36m[1mINFO[22m[39m: Mapped {/google/callback, GET} route
+[90m2026-03-30 23:25:17[39m ℹ️ [36m[1mINFO[22m[39m: Mapped {/graphql, POST} route
+[90m2026-03-30 23:25:17[39m ℹ️ [36m[1mINFO[22m[39m: Nest application successfully started
+[90m2026-03-30 23:26:08[39m ℹ️ [36m[1mINFO[22m[39m: AppController {/}:
+[90m2026-03-30 23:26:08[39m ℹ️ [36m[1mINFO[22m[39m: Mapped {/, GET} route
+[90m2026-03-30 23:26:08[39m ℹ️ [36m[1mINFO[22m[39m: AuthController {/}:
+[90m2026-03-30 23:26:08[39m ℹ️ [36m[1mINFO[22m[39m: Mapped {/google, GET} route
+[90m2026-03-30 23:26:08[39m ℹ️ [36m[1mINFO[22m[39m: Mapped {/google/callback, GET} route
+[90m2026-03-30 23:26:08[39m ℹ️ [36m[1mINFO[22m[39m: Mapped {/graphql, POST} route
+[90m2026-03-30 23:26:08[39m ℹ️ [36m[1mINFO[22m[39m: Nest application successfully started
+[90m2026-03-30 23:27:55[39m ℹ️ [36m[1mINFO[22m[39m: AppController {/}:
+[90m2026-03-30 23:27:55[39m ℹ️ [36m[1mINFO[22m[39m: Mapped {/, GET} route
+[90m2026-03-30 23:27:55[39m ℹ️ [36m[1mINFO[22m[39m: AuthController {/}:
+[90m2026-03-30 23:27:55[39m ℹ️ [36m[1mINFO[22m[39m: Mapped {/google, GET} route
+[90m2026-03-30 23:27:55[39m ℹ️ [36m[1mINFO[22m[39m: Mapped {/google/callback, GET} route
+[90m2026-03-30 23:27:57[39m ℹ️ [36m[1mINFO[22m[39m: Mapped {/graphql, POST} route
+[90m2026-03-30 23:27:57[39m ℹ️ [36m[1mINFO[22m[39m: Nest application successfully started
+[90m2026-03-30 23:28:23[39m ℹ️ [36m[1mINFO[22m[39m: AppController {/}:
+[90m2026-03-30 23:28:23[39m ℹ️ [36m[1mINFO[22m[39m: Mapped {/, GET} route
+[90m2026-03-30 23:28:23[39m ℹ️ [36m[1mINFO[22m[39m: AuthController {/}:
+[90m2026-03-30 23:28:23[39m ℹ️ [36m[1mINFO[22m[39m: Mapped {/google, GET} route
+[90m2026-03-30 23:28:23[39m ℹ️ [36m[1mINFO[22m[39m: Mapped {/google/callback, GET} route
+[90m2026-03-30 23:28:23[39m ℹ️ [36m[1mINFO[22m[39m: Mapped {/graphql, POST} route
+[90m2026-03-30 23:28:23[39m ℹ️ [36m[1mINFO[22m[39m: Nest application successfully started
+[90m2026-03-30 23:29:52[39m ℹ️ [36m[1mINFO[22m[39m: AppController {/}:
+[90m2026-03-30 23:29:52[39m ℹ️ [36m[1mINFO[22m[39m: Mapped {/, GET} route
+[90m2026-03-30 23:29:52[39m ℹ️ [36m[1mINFO[22m[39m: AuthController {/}:
+[90m2026-03-30 23:29:52[39m ℹ️ [36m[1mINFO[22m[39m: Mapped {/google, GET} route
+[90m2026-03-30 23:29:52[39m ℹ️ [36m[1mINFO[22m[39m: Mapped {/google/callback, GET} route
+[90m2026-03-30 23:29:53[39m ℹ️ [36m[1mINFO[22m[39m: Mapped {/graphql, POST} route
+[90m2026-03-30 23:29:53[39m ℹ️ [36m[1mINFO[22m[39m: Nest application successfully started
+[90m2026-03-30 23:32:00[39m ℹ️ [36m[1mINFO[22m[39m: AppController {/}:
+[90m2026-03-30 23:32:00[39m ℹ️ [36m[1mINFO[22m[39m: Mapped {/, GET} route
+[90m2026-03-30 23:32:00[39m ℹ️ [36m[1mINFO[22m[39m: AuthController {/}:
+[90m2026-03-30 23:32:00[39m ℹ️ [36m[1mINFO[22m[39m: Mapped {/google, GET} route
+[90m2026-03-30 23:32:00[39m ℹ️ [36m[1mINFO[22m[39m: Mapped {/google/callback, GET} route
+[90m2026-03-30 23:32:01[39m ℹ️ [36m[1mINFO[22m[39m: Mapped {/graphql, POST} route
+[90m2026-03-30 23:32:01[39m ℹ️ [36m[1mINFO[22m[39m: Nest application successfully started
+[90m2026-03-30 23:44:49[39m ℹ️ [36m[1mINFO[22m[39m: AppController {/}:
+[90m2026-03-30 23:44:49[39m ℹ️ [36m[1mINFO[22m[39m: Mapped {/, GET} route
+[90m2026-03-30 23:44:49[39m ℹ️ [36m[1mINFO[22m[39m: AuthController {/}:
+[90m2026-03-30 23:44:49[39m ℹ️ [36m[1mINFO[22m[39m: Mapped {/google, GET} route
+[90m2026-03-30 23:44:49[39m ℹ️ [36m[1mINFO[22m[39m: Mapped {/google/callback, GET} route
+[90m2026-03-30 23:44:53[39m ℹ️ [36m[1mINFO[22m[39m: Mapped {/graphql, POST} route
+[90m2026-03-30 23:44:53[39m ℹ️ [36m[1mINFO[22m[39m: Nest application successfully started
+[90m2026-03-30 23:48:41[39m ℹ️ [36m[1mINFO[22m[39m: AppController {/}:
+[90m2026-03-30 23:48:41[39m ℹ️ [36m[1mINFO[22m[39m: Mapped {/, GET} route
+[90m2026-03-30 23:48:41[39m ℹ️ [36m[1mINFO[22m[39m: AuthController {/}:
+[90m2026-03-30 23:48:41[39m ℹ️ [36m[1mINFO[22m[39m: Mapped {/google, GET} route
+[90m2026-03-30 23:48:41[39m ℹ️ [36m[1mINFO[22m[39m: Mapped {/google/callback, GET} route
+[90m2026-03-30 23:48:43[39m ℹ️ [36m[1mINFO[22m[39m: Mapped {/graphql, POST} route
+[90m2026-03-30 23:48:43[39m ℹ️ [36m[1mINFO[22m[39m: Nest application successfully started
+[90m2026-03-30 23:52:01[39m ℹ️ [36m[1mINFO[22m[39m: AppController {/}:
+[90m2026-03-30 23:52:01[39m ℹ️ [36m[1mINFO[22m[39m: Mapped {/, GET} route
+[90m2026-03-30 23:52:01[39m ℹ️ [36m[1mINFO[22m[39m: AuthController {/}:
+[90m2026-03-30 23:52:01[39m ℹ️ [36m[1mINFO[22m[39m: Mapped {/google, GET} route
+[90m2026-03-30 23:52:01[39m ℹ️ [36m[1mINFO[22m[39m: Mapped {/google/callback, GET} route
+[90m2026-03-30 23:52:03[39m ℹ️ [36m[1mINFO[22m[39m: Mapped {/graphql, POST} route
+[90m2026-03-30 23:52:03[39m ℹ️ [36m[1mINFO[22m[39m: Nest application successfully started
+[90m2026-03-30 23:58:43[39m ℹ️ [36m[1mINFO[22m[39m: AppController {/}:
+[90m2026-03-30 23:58:43[39m ℹ️ [36m[1mINFO[22m[39m: Mapped {/, GET} route
+[90m2026-03-30 23:58:43[39m ℹ️ [36m[1mINFO[22m[39m: AuthController {/}:
+[90m2026-03-30 23:58:43[39m ℹ️ [36m[1mINFO[22m[39m: Mapped {/google, GET} route
+[90m2026-03-30 23:58:43[39m ℹ️ [36m[1mINFO[22m[39m: Mapped {/google/callback, GET} route
+[90m2026-03-30 23:58:44[39m ℹ️ [36m[1mINFO[22m[39m: Mapped {/graphql, POST} route
+[90m2026-03-30 23:58:44[39m ℹ️ [36m[1mINFO[22m[39m: Nest application successfully started
+[90m2026-03-31 00:00:09[39m ℹ️ [36m[1mINFO[22m[39m: AppController {/}:
+[90m2026-03-31 00:00:09[39m ℹ️ [36m[1mINFO[22m[39m: Mapped {/, GET} route
+[90m2026-03-31 00:00:09[39m ℹ️ [36m[1mINFO[22m[39m: AuthController {/}:
+[90m2026-03-31 00:00:09[39m ℹ️ [36m[1mINFO[22m[39m: Mapped {/google, GET} route
+[90m2026-03-31 00:00:09[39m ℹ️ [36m[1mINFO[22m[39m: Mapped {/google/callback, GET} route
+[90m2026-03-31 00:00:09[39m ℹ️ [36m[1mINFO[22m[39m: Mapped {/graphql, POST} route
+[90m2026-03-31 00:00:09[39m ℹ️ [36m[1mINFO[22m[39m: Nest application successfully started
+[90m2026-03-31 00:03:34[39m ℹ️ [36m[1mINFO[22m[39m: AppController {/}:
+[90m2026-03-31 00:03:34[39m ℹ️ [36m[1mINFO[22m[39m: Mapped {/, GET} route
+[90m2026-03-31 00:03:34[39m ℹ️ [36m[1mINFO[22m[39m: AuthController {/}:
+[90m2026-03-31 00:03:34[39m ℹ️ [36m[1mINFO[22m[39m: Mapped {/google, GET} route
+[90m2026-03-31 00:03:34[39m ℹ️ [36m[1mINFO[22m[39m: Mapped {/google/callback, GET} route
+[90m2026-03-31 00:03:35[39m ℹ️ [36m[1mINFO[22m[39m: Mapped {/graphql, POST} route
+[90m2026-03-31 00:03:35[39m ℹ️ [36m[1mINFO[22m[39m: Nest application successfully started
+[90m2026-03-31 00:08:03[39m ℹ️ [36m[1mINFO[22m[39m: AppController {/}:
+[90m2026-03-31 00:08:03[39m ℹ️ [36m[1mINFO[22m[39m: Mapped {/, GET} route
+[90m2026-03-31 00:08:03[39m ℹ️ [36m[1mINFO[22m[39m: AuthController {/}:
+[90m2026-03-31 00:08:03[39m ℹ️ [36m[1mINFO[22m[39m: Mapped {/google, GET} route
+[90m2026-03-31 00:08:03[39m ℹ️ [36m[1mINFO[22m[39m: Mapped {/google/callback, GET} route
+[90m2026-03-31 00:08:04[39m ℹ️ [36m[1mINFO[22m[39m: Mapped {/graphql, POST} route
+[90m2026-03-31 00:08:04[39m ℹ️ [36m[1mINFO[22m[39m: Nest application successfully started
+[90m2026-03-31 00:09:48[39m ℹ️ [36m[1mINFO[22m[39m: AppController {/}:
+[90m2026-03-31 00:09:48[39m ℹ️ [36m[1mINFO[22m[39m: Mapped {/, GET} route
+[90m2026-03-31 00:09:48[39m ℹ️ [36m[1mINFO[22m[39m: AuthController {/}:
+[90m2026-03-31 00:09:48[39m ℹ️ [36m[1mINFO[22m[39m: Mapped {/google, GET} route
+[90m2026-03-31 00:09:48[39m ℹ️ [36m[1mINFO[22m[39m: Mapped {/google/callback, GET} route
+[90m2026-03-31 00:09:48[39m ℹ️ [36m[1mINFO[22m[39m: Mapped {/graphql, POST} route
+[90m2026-03-31 00:09:48[39m ℹ️ [36m[1mINFO[22m[39m: Nest application successfully started
+[90m2026-03-31 00:11:30[39m ℹ️ [36m[1mINFO[22m[39m: AppController {/}:
+[90m2026-03-31 00:11:30[39m ℹ️ [36m[1mINFO[22m[39m: Mapped {/, GET} route
+[90m2026-03-31 00:11:30[39m ℹ️ [36m[1mINFO[22m[39m: AuthController {/}:
+[90m2026-03-31 00:11:30[39m ℹ️ [36m[1mINFO[22m[39m: Mapped {/google, GET} route
+[90m2026-03-31 00:11:30[39m ℹ️ [36m[1mINFO[22m[39m: Mapped {/google/callback, GET} route
+[90m2026-03-31 00:11:30[39m ℹ️ [36m[1mINFO[22m[39m: Mapped {/graphql, POST} route
+[90m2026-03-31 00:11:30[39m ℹ️ [36m[1mINFO[22m[39m: Nest application successfully started
+[90m2026-03-31 00:11:51[39m ℹ️ [36m[1mINFO[22m[39m: AppController {/}:
+[90m2026-03-31 00:11:51[39m ℹ️ [36m[1mINFO[22m[39m: Mapped {/, GET} route
+[90m2026-03-31 00:11:51[39m ℹ️ [36m[1mINFO[22m[39m: AuthController {/}:
+[90m2026-03-31 00:11:51[39m ℹ️ [36m[1mINFO[22m[39m: Mapped {/google, GET} route
+[90m2026-03-31 00:11:51[39m ℹ️ [36m[1mINFO[22m[39m: Mapped {/google/callback, GET} route
+[90m2026-03-31 00:11:52[39m ℹ️ [36m[1mINFO[22m[39m: Mapped {/graphql, POST} route
+[90m2026-03-31 00:11:52[39m ℹ️ [36m[1mINFO[22m[39m: Nest application successfully started
+[90m2026-03-31 00:12:29[39m ℹ️ [36m[1mINFO[22m[39m: AppController {/}:
+[90m2026-03-31 00:12:29[39m ℹ️ [36m[1mINFO[22m[39m: Mapped {/, GET} route
+[90m2026-03-31 00:12:29[39m ℹ️ [36m[1mINFO[22m[39m: AuthController {/}:
+[90m2026-03-31 00:12:29[39m ℹ️ [36m[1mINFO[22m[39m: Mapped {/google, GET} route
+[90m2026-03-31 00:12:29[39m ℹ️ [36m[1mINFO[22m[39m: Mapped {/google/callback, GET} route
+[90m2026-03-31 00:12:30[39m ℹ️ [36m[1mINFO[22m[39m: Mapped {/graphql, POST} route
+[90m2026-03-31 00:12:30[39m ℹ️ [36m[1mINFO[22m[39m: Nest application successfully started
+[90m2026-03-31 00:57:49[39m ℹ️ [36m[1mINFO[22m[39m: AppController {/}:
+[90m2026-03-31 00:57:49[39m ℹ️ [36m[1mINFO[22m[39m: Mapped {/, GET} route
+[90m2026-03-31 00:57:49[39m ℹ️ [36m[1mINFO[22m[39m: AuthController {/}:
+[90m2026-03-31 00:57:49[39m ℹ️ [36m[1mINFO[22m[39m: Mapped {/google, GET} route
+[90m2026-03-31 00:57:49[39m ℹ️ [36m[1mINFO[22m[39m: Mapped {/google/callback, GET} route
+[90m2026-03-31 00:57:53[39m ℹ️ [36m[1mINFO[22m[39m: Mapped {/graphql, POST} route
+[90m2026-03-31 00:57:53[39m ℹ️ [36m[1mINFO[22m[39m: Nest application successfully started
+[90m2026-03-31 00:59:15[39m ℹ️ [36m[1mINFO[22m[39m: AppController {/}:
+[90m2026-03-31 00:59:15[39m ℹ️ [36m[1mINFO[22m[39m: Mapped {/, GET} route
+[90m2026-03-31 00:59:15[39m ℹ️ [36m[1mINFO[22m[39m: AuthController {/}:
+[90m2026-03-31 00:59:15[39m ℹ️ [36m[1mINFO[22m[39m: Mapped {/google, GET} route
+[90m2026-03-31 00:59:15[39m ℹ️ [36m[1mINFO[22m[39m: Mapped {/google/callback, GET} route
+[90m2026-03-31 00:59:16[39m ℹ️ [36m[1mINFO[22m[39m: Mapped {/graphql, POST} route
+[90m2026-03-31 00:59:16[39m ℹ️ [36m[1mINFO[22m[39m: Nest application successfully started
